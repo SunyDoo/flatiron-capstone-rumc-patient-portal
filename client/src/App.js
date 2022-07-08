@@ -19,7 +19,7 @@ function App() {
             <h1>Test Route</h1>
           </Route>
           <Route path="/">
-            <h1>Current Page Count: {count}</h1>
+            <h2>Current Page Count: {count}</h2>
           </Route>
         </Switch>
       </div>
