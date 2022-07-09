@@ -32,24 +32,24 @@ doctor_2 = location_1.Doctor.create(name: "Michael Zeidman, MD", specialty: "Gen
 doctor_3 = location_1.Doctor.create(name: "Frank Acerra, DO", specialty: "Critical Care" , network: ["1199", "NYSNA", "BCBS"], phone_number: "718.816.6440", image: "https://www.rumcsi.org/wp-content/uploads/2020/10/acerraf1-1.jpg" )
 
 doctor_4 = location_2.Doctor.create(name: "Michael Benson, MD", specialty: "OB/GYN" , network: ["AARP", "AETNA", "UNITEDHEALTHCARE"], phone_number: "718.273.5500", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Benson-Michael-768x960.jpeg" )
-doctor_5 = location_2.Doctor.create(name: "Aldo Arpaia, MD", specialty: "MEDICINE" , network: ["MEDICAID", "1199", "BCBS"], phone_number: "718.727.1898", image: "https://www.rumcsi.org/wp-content/uploads/2020/11/Arpaia-Aldo-768x905.jpg" )
-doctor_6 = location_2.Doctor.create(name: "Suzy Bibawy, MD", specialty: "MEDICINE" , network: ["1199", "NYSNA", "EMBLEM"], phone_number: "718.818.5584", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Bibawy-Suzy-768x960.jpeg" )
+doctor_5 = location_2.Doctor.create(name: "Aldo Arpaia, MD", specialty: "Medicine" , network: ["MEDICAID", "1199", "BCBS"], phone_number: "718.727.1898", image: "https://www.rumcsi.org/wp-content/uploads/2020/11/Arpaia-Aldo-768x905.jpg" )
+doctor_6 = location_2.Doctor.create(name: "Suzy Bibawy, MD", specialty: "Medicine" , network: ["1199", "NYSNA", "EMBLEM"], phone_number: "718.818.5584", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Bibawy-Suzy-768x960.jpeg" )
 
-doctor_7 = location_3.Doctor.create(name: "Paramanathan Ahilan, MD", specialty: "CARDIOLOGY" , network: ["1199", "MEDICAID", "MEDICARE"], phone_number: "718.981.2684", image: "https://www.rumcsi.org/wp-content/uploads/2020/11/Ahilan-Para--768x960.jpeg" )
-doctor_8 = location_3.Doctor.create(name: "Radu Ariton, MD", specialty: "CARDIOLOGY" , network: ["AARP", "AETNA", "UNITEDHEALTHCARE"], phone_number: "718.981.0370", image: "https://www.rumcsi.org/wp-content/uploads/2020/11/d33u0k6qsi-768x905.jpg" )
-doctor_9 = location_3.Doctor.create(name: "Keith Diaz, MD", specialty: "PULMONARY" , network: ["1199", "BCBS", "EMBLEM"], phone_number: "718.818.1058", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Diaz-Keith-768x512.jpg" )
+doctor_7 = location_3.Doctor.create(name: "Paramanathan Ahilan, MD", specialty: "Cardiology" , network: ["1199", "MEDICAID", "MEDICARE"], phone_number: "718.981.2684", image: "https://www.rumcsi.org/wp-content/uploads/2020/11/Ahilan-Para--768x960.jpeg" )
+doctor_8 = location_3.Doctor.create(name: "Radu Ariton, MD", specialty: "Pulmonary" , network: ["AARP", "AETNA", "UNITEDHEALTHCARE"], phone_number: "718.981.0370", image: "https://www.rumcsi.org/wp-content/uploads/2020/11/d33u0k6qsi-768x905.jpg" )
+doctor_9 = location_3.Doctor.create(name: "Keith Diaz, MD", specialty: "Pulmonary" , network: ["1199", "BCBS", "EMBLEM"], phone_number: "718.818.1058", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Diaz-Keith-768x512.jpg" )
 
-doctor_10 = location_4.Doctor.create(name: "Thomas Forlenza, MD", specialty: "ONCOLOGY" , network: ["AARP", "MEDICARE", "NYSNA"], phone_number: "718.816.4949", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Forlenza-Thomas-768x960.jpeg" )
-doctor_11 = location_4.Doctor.create(name: "Seetha Murukutla, MD", specialty: "ONCOLOGY" , network: ["1199", "AETNA", "MEDICAID"], phone_number: "718.273.2277", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/2-MURUKUTLA-Seetha--768x960.jpg" )
-doctor_12 = location_4.Doctor.create(name: "Victoria Forte, MD", specialty: "ONCOLOGY" , network: ["UNITEDHEALTHCARE", "1199", "EMBLEM"], phone_number: "718.816.4949", image: "https://www.rumcsi.org/wp-content/uploads/2021/08/Dr.-Forte.jpg" )
+doctor_10 = location_4.Doctor.create(name: "Thomas Forlenza, MD", specialty: "Oncology" , network: ["AARP", "MEDICARE", "NYSNA"], phone_number: "718.816.4949", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Forlenza-Thomas-768x960.jpeg" )
+doctor_11 = location_4.Doctor.create(name: "Seetha Murukutla, MD", specialty: "Oncology" , network: ["1199", "AETNA", "MEDICAID"], phone_number: "718.273.2277", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/2-MURUKUTLA-Seetha--768x960.jpg" )
+doctor_12 = location_4.Doctor.create(name: "Victoria Forte, MD", specialty: "Oncology" , network: ["UNITEDHEALTHCARE", "1199", "EMBLEM"], phone_number: "718.816.4949", image: "https://www.rumcsi.org/wp-content/uploads/2021/08/Dr.-Forte.jpg" )
 
-doctor_13 = location_5.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
-doctor_14 = location_5.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
-doctor_15 = location_5.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
+doctor_13 = location_5.Doctor.create(name: "Lina Leykina, MD", specialty: "Endocrinology" , network: ["UNITEDHEALTHCARE", "AETNA", "MEDICAID"], phone_number: "718.727.1366", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Leykina-Lina-768x1152.jpg" )
+doctor_14 = location_5.Doctor.create(name: "Philip Otterbeck, MD", specialty: "Endocrinology" , network: ["1199", "AETNA", "MEDICARE"], phone_number: "718.727.1366", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Otterbeck-Philip-E-768x1152.jpg" )
+doctor_15 = location_5.Doctor.create(name: "Mark Sheynshteyn, DO", specialty: "Endocrinology" , network: ["BCBS", "UNITEDHEALTHCARE", "EMBLEM"], phone_number: "718.727.1366", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/mark.jpg" )
 
-doctor_16 = location_6.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
-doctor_17 = location_6.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
-doctor_18 = location_6.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
+doctor_16 = location_6.Doctor.create(name: "Marianne LaBarbera, MD", specialty: "Family Practice" , network: ["1199", "AARP", "EMBLEM"], phone_number: "718.818.1162", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/La-Barbera-Marianne.jpg" )
+doctor_17 = location_6.Doctor.create(name: "Nepola Neil, MD", specialty: "Family Practice" , network: ["EMBLEM", "AETNA", "MEDICAID"], phone_number: "718.667.6767", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Nepola-Neil.jpg" )
+doctor_18 = location_6.Doctor.create(name: "Vladimir Barayev, MD", specialty: "Family Practice" , network: ["UNITEDHEALTHCARE", "AETNA", "NYSNA"], phone_number: "718.876.1732", image: "https://www.rumcsi.org/wp-content/uploads/2020/11/Barayev-Vladimir-768x1024.jpg" )
 
 doctor_19 = location_7.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
 doctor_20 = location_7.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
