@@ -24,7 +24,7 @@ location_8 = Location.create(name: "Primary Care and Gastroenterology: Staten Is
 location_9 = Location.create(name: "Primary Walk-In/Cardiology: Staten Island", address: "1058 Forest Avenue", phone_number: "718.818.1058", zip_code: 10310, image_url: "https://www.rumcsi.org/wp-content/uploads/2021/01/1058-Forest_v2-768x512.jpg" )
 location_10 = Location.create(name: "Primary Walk-In/Immediate Care Center", address: "4360 Hylan Blvd", phone_number: "718.818.4360", zip_code: 10312, image_url: "https://www.rumcsi.org/wp-content/uploads/2021/01/primary-care-hylan-blvd-768x512.jpg" )
 location_11 = Location.create(name: "Urology Services: Staten Island", address: "1200 South Avenue", phone_number: "718.370.1400", zip_code: 10314, image_url: "https://www.rumcsi.org/wp-content/uploads/2021/01/1200-South-768x512.jpg" )
-location_12 = Location.create(name: "Richmond Health Network: Internal Medicine", address: "4268 Richmond Avenue", phone_number: "718.967.3000", zip_code: 10312, image_url: "https://www.rumcsi.org/wp-content/uploads/2021/10/locations_0000_4268-Richmond-Avenue-SI-NY-10312--768x512.jpg" )
+location_12 = Location.create(name: "The Center For Integrative Behavioral Medicine", address: "1130 South Avenue", phone_number: "718.818.6132", zip_code: 10314, image_url: "https://www.rumcsi.org/wp-content/uploads/2020/09/1130-768x512.jpg" )
 
 puts "Creating doctors..."
 doctor_1 = location_1.Doctor.create(name: "Adebayo Adeyinka, MD", specialty: "Critical Care" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.250.8525", image: "https://www.rumcsi.org/wp-content/uploads/2020/11/AAEAAQAAAAAAAAWMAAAAJDFiYjg4MTg4LWYzNjktNDdiNS05OGZmLTkzNjM3MTEwODI0Mw1.jpg" )
@@ -67,13 +67,13 @@ doctor_28 = location_10.Doctor.create(name: "Phillip Cosentino, MD", specialty: 
 doctor_29 = location_10.Doctor.create(name: "Melissa Grageda, MD", specialty: "Critical Care" , network: ["UNITEDHEALTHCARE", "AETNA", "EMBLEM"], phone_number: "718.818.4636", image: "https://www.rumcsi.org/wp-content/uploads/2022/05/Grageda-768x1125.jpg" )
 doctor_30 = location_10.Doctor.create(name: "Stephen Erosa, DO", specialty: "Family Practice" , network: ["BCBS", "AARP", "EMBLEM"], phone_number: "718.818.1161", image: "https://www.rumcsi.org/wp-content/uploads/2021/04/Erosa-Headshot-768x1151.jpg" )
 
-doctor_31 = location_11.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
-doctor_32 = location_11.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
-doctor_33 = location_11.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
+doctor_31 = location_11.Doctor.create(name: "Jay Basillote, MD", specialty: "Urology" , network: ["1199", "AETNA", "BCBS"], phone_number: "718.774.8386", image: "https://www.rumcsi.org/wp-content/uploads/2020/11/Basillote-Jay-768x960.jpeg" )
+doctor_32 = location_11.Doctor.create(name: "Michael Brodherson", specialty: "Urology" , network: ["UNITEDHEALTHCARE", "MEDICARE", "EMBLEM"], phone_number: "718.370.1400", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/d5500vdw3w.jpg" )
+doctor_33 = location_11.Doctor.create(name: "Yaniv Larish", specialty: "Urology" , network: ["MEDICAID", "AARP", "NYSNA"], phone_number: "718.370.1400", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Larish-Yaniv.jpg" )
 
-doctor_34 = location_12.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
-doctor_35 = location_12.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
-doctor_36 = location_12.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
+doctor_34 = location_12.Doctor.create(name: "Joel Idowu, MD", specialty: "Psychiatry" , network: ["1199", "NYSNA", "AARP"], phone_number: "718.273.6641", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Idowu-Joel-768x960.jpeg" )
+doctor_35 = location_12.Doctor.create(name: "Salim Hussain, MD", specialty: "Psychiatry" , network: ["BCBS", "MEDICAID", "MEDICARE"], phone_number: "718.818.6131", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Hussain-Salim-768x905.jpg" )
+doctor_36 = location_12.Doctor.create(name: "Jo Desantis, MD", specialty: "Psychiatry" , network: ["UNITEDHEALTHCARE", "AETNA", "EMBLEM"], phone_number: "718.818.5385", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Desantis-Jo-768x905.jpg" )
 
 
 puts "✅ Done seeding!"
