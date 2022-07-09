@@ -28,12 +28,12 @@ location_12 = Location.create(name: "Richmond Health Network: Internal Medicine"
 
 puts "Creating doctors..."
 doctor_1 = location_1.Doctor.create(name: "Adebayo Adeyinka, MD", specialty: "Critical Care" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.250.8525", image: "https://www.rumcsi.org/wp-content/uploads/2020/11/AAEAAQAAAAAAAAWMAAAAJDFiYjg4MTg4LWYzNjktNDdiNS05OGZmLTkzNjM3MTEwODI0Mw1.jpg" )
-doctor_2 = location_1.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
-doctor_3 = location_1.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
+doctor_2 = location_1.Doctor.create(name: "Michael Zeidman, MD", specialty: "General Surgery" , network: ["MEDICARE", "AARP", "EMBLEM"], phone_number: "718.743.3121", image: "https://www.rumcsi.org/wp-content/uploads/2021/04/Best-768x1151.jpg" )
+doctor_3 = location_1.Doctor.create(name: "Frank Acerra, DO", specialty: "Critical Care" , network: ["1199", "NYSNA", "BCBS"], phone_number: "718.816.6440", image: "https://www.rumcsi.org/wp-content/uploads/2020/10/acerraf1-1.jpg" )
 
-doctor_4 = location_2.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
-doctor_5 = location_2.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
-doctor_6 = location_2.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
+doctor_4 = location_2.Doctor.create(name: "Michael Benson, MD", specialty: "OB/GYN" , network: ["AARP", "AETNA", "UNITEDHEALTHCARE"], phone_number: "718.273.5500", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Benson-Michael-768x960.jpeg" )
+doctor_5 = location_2.Doctor.create(name: "Aldo Arpaia, MD", specialty: "MEDICINE" , network: ["MEDICAID", "1199", "BCBS"], phone_number: "718.727.1898", image: "https://www.rumcsi.org/wp-content/uploads/2020/11/Arpaia-Aldo-768x905.jpg" )
+doctor_6 = location_2.Doctor.create(name: "Suzy Bibawy, MD", specialty: "MEDICINE" , network: ["1199", "NYSNA", "EMBLEM"], phone_number: "718.818.5584", image: "https://www.rumcsi.org/wp-content/uploads/2020/12/Bibawy-Suzy-768x960.jpeg" )
 
 doctor_7 = location_3.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
 doctor_8 = location_3.Doctor.create(name: "Aiman Abboud, DO", specialty: "OB/GYN" , network: ["1199", "AETNA", "EMBLEM"], phone_number: "718.743.3121", image: "" )
