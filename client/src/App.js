@@ -1,16 +1,15 @@
-// client/src/components/App.js
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { config } from "./Constants";
 
 function App() {
-  const URL = config.url;
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
+    const URL = config.url;
     fetch(`${URL}/locations`)
       .then((r) => r.json())
-      .then((data) => setLocations(data));
+      .then((data) => setLocations(data))
   }, []);
 
   console.log(`Running in ${process.env.NODE_ENV}`);
