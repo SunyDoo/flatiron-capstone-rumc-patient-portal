@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useContext } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
 import { config } from "./Constants";
 import { UserContext } from "./UserContext";
+import NavBar from "./Components/NavBar";
+import Doctors from "./Components/Doctors";
 
 function App() {
   const [locations, setLocations] = useState([]);
   const [doctors, setDoctors] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
 
-  const msg = useContext(UserContext);
   useEffect(() => {
     fetch(`${config.url}/locations`)
       .then((r) => r.json())
@@ -21,28 +22,27 @@ function App() {
       .then((data) => setDoctors(data));
   }, []);
 
-  console.log(`Running in ${process.env.NODE_ENV}`);
+  // console.log(`Running in ${process.env.NODE_ENV}`);
 
   return (
-    <BrowserRouter>
-      <UserContext.Provider value={{ currentUser, setCurrentUser }}>
-        <div className="App">
-          <Switch>
-            <Route path="/doctors">
-              {doctors.map((doctor) => (
-                <li key={doctor.id}>{doctor.name}</li>
-              ))}
-            </Route>
-            <Route path="/">
-              {locations.map((location) => (
-                <li key={location.id}>{location.name}</li>
-              ))}
-              <p>{msg}</p>
-            </Route>
-          </Switch>
-        </div>
-      </UserContext.Provider>
-    </BrowserRouter>
+    <UserContext.Provider value={{ currentUser, setCurrentUser }}>
+      <div className="App">
+        <NavBar />
+        <Switch>
+          <Route exact path="/">
+            <h3>Welcome</h3>
+          </Route>
+          <Route exact path="/doctors">
+            <Doctors doctors={doctors} />
+          </Route>
+          <Route exact path="/locations">
+            {locations.map((location) => (
+              <li key={location.id}>{location.name}</li>
+            ))}
+          </Route>
+        </Switch>
+      </div>
+    </UserContext.Provider>
   );
 }
 

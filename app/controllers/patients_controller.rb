@@ -3,24 +3,25 @@ class PatientsController < ApplicationController
 
   # GET /patients
   def index
-    @patients = Patient.all
+    patients = Patient.all
 
-    render json: @patients
+    render json: patients
   end
 
   # GET /patients/1
   def show
-    render json: @patient
+    current_user = Patient.find(session[:user_id])
+    render json: current_user
   end
 
   # POST /patients
   def create
-    @patient = Patient.new(patient_params)
-
-    if @patient.save
-      render json: @patient, status: :created, location: @patient
-    else
-      render json: @patient.errors, status: :unprocessable_entity
+    patient = Patient.create(patient_params)
+      if patient.valid?
+          session[:patient_id] = patient.id
+          render json: patient, status: :created
+      else
+          render json: { errors: patient.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

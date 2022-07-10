@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   resources :locations, only: [:show, :index]
   resources :appointments
   resources :patients, only: [:show, :create, :index]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  get '/hello', to: 'application#hello_world'
+  post "/signup", to: "patients#create"
+  post "/login", to: "sessions#create"
+  get "/auth", to: "patients#show"
+  delete "/logout", to: "sessions#destroy"
+
   # Defines the root path route ("/")
   # root "articles#index"
 
