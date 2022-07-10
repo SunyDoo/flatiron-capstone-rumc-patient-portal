@@ -13,7 +13,7 @@ function App() {
       .then((data) => setLocations(data));
   }, []);
 
-  // console.log(`Running in ${process.env.NODE_ENV}`);
+  console.log(`Running in ${process.env.NODE_ENV}`);
 
   return (
     <BrowserRouter>
