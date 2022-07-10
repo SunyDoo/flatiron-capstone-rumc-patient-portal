@@ -24,19 +24,19 @@ class PatientsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /patients/1
-  def update
-    if @patient.update(patient_params)
-      render json: @patient
-    else
-      render json: @patient.errors, status: :unprocessable_entity
-    end
-  end
+  # # PATCH/PUT /patients/1
+  # def update
+  #   if @patient.update(patient_params)
+  #     render json: @patient
+  #   else
+  #     render json: @patient.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # DELETE /patients/1
-  def destroy
-    @patient.destroy
-  end
+  # # DELETE /patients/1
+  # def destroy
+  #   @patient.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

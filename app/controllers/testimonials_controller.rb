@@ -24,19 +24,19 @@ class TestimonialsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /testimonials/1
-  def update
-    if @testimonial.update(testimonial_params)
-      render json: @testimonial
-    else
-      render json: @testimonial.errors, status: :unprocessable_entity
-    end
-  end
+  # # PATCH/PUT /testimonials/1
+  # def update
+  #   if @testimonial.update(testimonial_params)
+  #     render json: @testimonial
+  #   else
+  #     render json: @testimonial.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # DELETE /testimonials/1
-  def destroy
-    @testimonial.destroy
-  end
+  # # DELETE /testimonials/1
+  # def destroy
+  #   @testimonial.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
