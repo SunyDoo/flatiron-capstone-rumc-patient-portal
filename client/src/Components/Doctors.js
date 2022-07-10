@@ -10,9 +10,7 @@ function Doctors({ doctors }) {
           ))}
         </ul>
       </div>
-      {/* <div>
-        <button onClick={order}>order</button>
-      </div> */}
+      
     </>
   );
 }
