@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :testimonials
+  resources :doctors
+  resources :locations
   resources :appointments
   resources :testimonials, only: [:show, :create, :index]
   resources :doctors, only: [:show, :index]
