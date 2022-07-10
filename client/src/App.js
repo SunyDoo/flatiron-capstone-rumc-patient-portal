@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
+  const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    fetch("/hello")
+    fetch("/locations")
       .then((r) => r.json())
-      .then((data) => setCount(data.count));
+      .then((data) => setLocations(data));
   }, []);
 
   return (
@@ -19,7 +20,7 @@ function App() {
             <h1>Test Route</h1>
           </Route>
           <Route path="/">
-            <h2>Current Page Count: {count}</h2>
+            <h2>Location: {locations[0].name}</h2>
           </Route>
         </Switch>
       </div>

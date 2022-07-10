@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :doctors, only: [:show, :index]
   resources :locations, only: [:show, :index]
   resources :appointments
-  resources :patients: [:show, :create, :index]
+  resources :patients, only: [:show, :create, :index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get '/hello', to: 'application#hello_world'
   # Defines the root path route ("/")
