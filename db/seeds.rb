@@ -1,7 +1,7 @@
 
-# Patient.destroy_all
-# Location.destroy_all
-# Doctor.destroy_all
+Patient.destroy_all
+Location.destroy_all
+Doctor.destroy_all
 
 
 puts "🌱 Seeding..."

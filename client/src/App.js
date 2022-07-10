@@ -1,16 +1,19 @@
 // client/src/components/App.js
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { config } from "./Constants";
 
 function App() {
-  // const [count, setCount] = useState(0);
+  const URL = config.url;
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    fetch("/locations")
+    fetch(`${URL}/locations`)
       .then((r) => r.json())
       .then((data) => setLocations(data));
   }, []);
+
+  // console.log(`Running in ${process.env.NODE_ENV}`);
 
   return (
     <BrowserRouter>
@@ -20,7 +23,9 @@ function App() {
             <h1>Test Route</h1>
           </Route>
           <Route path="/">
-            <h2>Location: {locations[0].name}</h2>
+            {locations.map((location) => (
+              <li key={location.id}>{location.name}</li>
+            ))}
           </Route>
         </Switch>
       </div>
