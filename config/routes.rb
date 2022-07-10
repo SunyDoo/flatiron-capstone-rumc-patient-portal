@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   resources :locations, only: [:show, :index]
   resources :appointments
   resources :patients, only: [:show, :create, :index]
-  # post "/signup", to: "patients#create"
-  # post "/login", to: "sessions#create"
-  # get "/auth", to: "patients#show"
-  # delete "/logout", to: "sessions#destroy"
+  post "/signup", to: "patients#create"
+  post "/login", to: "sessions#create"
+  get "/auth", to: "patients#show"
+  delete "/logout", to: "sessions#destroy"
 
+  get '/hello', to: 'application#hello_world'
   # Defines the root path route ("/")
   # root "articles#index"
 
