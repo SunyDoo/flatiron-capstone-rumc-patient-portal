@@ -8,9 +8,14 @@
     "build": "npm install --prefix client && npm run build --prefix client",
     "clean": "rm -rf public",
     "deploy": "cp -a client/build/. public/",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
-    "navbar": "^2.1.0"
+    "navbar": "^2.1.0",
+    "serve": "^13.0.4"
   }
 }
