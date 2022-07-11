@@ -1,5 +1,7 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: %i[ show update destroy ]
+  wrap_parameters format: []
+  skip_before_action :authorize, only: :create
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
   # GET /patients
   def index
@@ -10,8 +12,8 @@ class PatientsController < ApplicationController
 
   # GET /patients/1
   def show
-    current_user = Patient.find(session[:user_id])
-    render json: current_user
+    @current_user = Patient.find(session[:patient_id])
+    render json: @current_user
   end
 
   # POST /patients
@@ -24,29 +26,17 @@ class PatientsController < ApplicationController
           render json: { errors: patient.errors.full_messages }, status: :unprocessable_entity
     end
   end
+  
 
-  # # PATCH/PUT /patients/1
-  # def update
-  #   if @patient.update(patient_params)
-  #     render json: @patient
-  #   else
-  #     render json: @patient.errors, status: :unprocessable_entity
-  #   end
-  # end
-
-  # # DELETE /patients/1
-  # def destroy
-  #   @patient.destroy
-  # end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_patient
-      @patient = Patient.find(params[:id])
+ 
+    def render_unprocessable_entity
+      render json: {error: invalid.record.errors}, status: :unprocessable_entity
     end
 
     # Only allow a list of trusted parameters through.
     def patient_params
-      params.require(:patient).permit(:username, :password_digest, :first_name, :last_name, :insurance)
+      params.permit(:username, :password_digest, :first_name, :last_name, :insurance)
     end
 end

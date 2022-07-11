@@ -4,6 +4,7 @@ import { config } from "./Constants";
 import { UserContext } from "./UserContext";
 import NavBar from "./Components/NavBar";
 import Doctors from "./Components/Doctors";
+import LoginForm from "./Components/LoginForm";
 
 function App() {
   const [locations, setLocations] = useState([]);
@@ -20,6 +21,15 @@ function App() {
     fetch(`${config.url}/doctors`)
       .then((r) => r.json())
       .then((data) => setDoctors(data));
+  }, []);
+
+  useEffect(() => {
+    // auto-login
+    fetch("/auth").then((res) => {
+      if (res.ok) {
+        res.json().then((user) => setCurrentUser(user));
+      }
+    });
   }, []);
 
   // console.log(`Running in ${process.env.NODE_ENV}`);
@@ -39,6 +49,9 @@ function App() {
             {locations.map((location) => (
               <li key={location.id}>{location.name}</li>
             ))}
+          </Route>
+          <Route exact path="/login">
+            {!currentUser ? <LoginForm /> : null}
           </Route>
         </Switch>
       </div>

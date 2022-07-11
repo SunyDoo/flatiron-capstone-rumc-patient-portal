@@ -1,9 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../UserContext";
 
 function NavBar() {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+
+  function handleLogoutClick() {
+    fetch("/logout", { method: "DELETE" }).then((res) => {
+      if (res.ok) {
+        setCurrentUser(null);
+      }
+    });
+  }
 
   return (
     <div>
@@ -23,7 +31,7 @@ function NavBar() {
         {!currentUser ? (
           <div>
             <NavLink to="/login" exact>
-              <button>Log In</button>
+              Log In
             </NavLink>
           </div>
         ) : null}
@@ -41,9 +49,7 @@ function NavBar() {
             <NavLink to="/billofrights" exact>
               View Patient Bill of Rights
             </NavLink>
-            <NavLink to="/logout" exact>
-              <button>Logout</button>
-            </NavLink>
+            <button onClick={handleLogoutClick}>Logout</button>
           </div>
         ) : null}
       </nav>

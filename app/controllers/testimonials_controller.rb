@@ -1,5 +1,6 @@
 class TestimonialsController < ApplicationController
   before_action :set_testimonial, only: %i[ show update destroy ]
+  skip_before_action :authorize
 
   # GET /testimonials
   def index

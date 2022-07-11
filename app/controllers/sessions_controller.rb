@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
     def destroy
         current_user = Patient.find(session[:patient_id])
-        if current_patient
+        if current_user
             session.delete :patient_id
             head :no_content
         else
