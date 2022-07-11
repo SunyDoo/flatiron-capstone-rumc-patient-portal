@@ -6,6 +6,8 @@ import NavBar from "./Components/NavBar";
 import Doctors from "./Components/Doctors";
 import LoginForm from "./Components/LoginForm";
 import Locations from "./Components/Locations";
+import WelcomeScreen from "./Components/WelcomeScreen";
+import FooterPage from "./Components/FooterPage";
 
 function App() {
   const [locations, setLocations] = useState([]);
@@ -41,18 +43,19 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/">
-            <h3>Welcome</h3>
+            <WelcomeScreen />
           </Route>
           <Route exact path="/doctors">
             <Doctors doctors={doctors} />
           </Route>
           <Route exact path="/locations">
-          <Locations locations={locations} />
+            <Locations locations={locations} />
           </Route>
           <Route exact path="/login">
             {!currentUser ? <LoginForm /> : null}
           </Route>
         </Switch>
+        <FooterPage />
       </div>
     </UserContext.Provider>
   );
