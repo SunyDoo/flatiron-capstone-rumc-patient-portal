@@ -5,6 +5,7 @@ import { UserContext } from "./UserContext";
 import NavBar from "./Components/NavBar";
 import Doctors from "./Components/Doctors";
 import LoginForm from "./Components/LoginForm";
+import Locations from "./Components/Locations";
 
 function App() {
   const [locations, setLocations] = useState([]);
@@ -46,9 +47,7 @@ function App() {
             <Doctors doctors={doctors} />
           </Route>
           <Route exact path="/locations">
-            {locations.map((location) => (
-              <li key={location.id}>{location.name}</li>
-            ))}
+          <Locations locations={locations} />
           </Route>
           <Route exact path="/login">
             {!currentUser ? <LoginForm /> : null}
