@@ -77,12 +77,21 @@ function SignUpForm() {
         </label>
         <label>
           Insurance Provider
-          <input
-            type="text"
-            id="insurance"
+          <select
             value={insurance}
             onChange={(e) => setInsurance(e.target.value)}
-          />
+          >
+            <option value="">Please Select...</option>
+            <option value="1199">1199</option>
+            <option value="AARP">AARP</option>
+            <option value="BCBS">BCBS</option>
+            <option value="EMBLEM">EMBLEM</option>
+            <option value="UNITEDHEALTHCARE">UNITEDHEALTHCARE</option>
+            <option value="MEDICAID">MEDICAID</option>
+            <option value="MEDICARE">MEDICARE</option>
+            <option value="NYSNA">NYSNA</option>
+            <option value="AETNA">AETNA</option>
+          </select>
         </label>
         <button type="submit">Sign Up</button>
       </form>
