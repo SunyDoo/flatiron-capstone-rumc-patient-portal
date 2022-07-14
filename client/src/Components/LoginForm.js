@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
+import { NavLink } from "react-router-dom";
 
 function LoginForm() {
   const [username, setUsername] = useState("");
@@ -45,7 +46,12 @@ function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Log In</button>
+        <span>
+          <button type="submit">Log In</button>{" "}
+          <NavLink to="/signup" exact>
+            New Patient?
+          </NavLink>{" "}
+        </span>
       </form>
       {errors ? errors.map((err) => <p key={err}>{err}</p>) : null}
     </>

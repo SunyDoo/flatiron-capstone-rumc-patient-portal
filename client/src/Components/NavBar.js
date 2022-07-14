@@ -14,7 +14,7 @@ function NavBar() {
   }
 
   return (
-    <div>
+    <div style={{ textAlign: "left" }}>
       <nav>
         <NavLink to="/" exact>
           Welcome
@@ -28,15 +28,8 @@ function NavBar() {
         <NavLink to="/testimonials" exact>
           Testimonials
         </NavLink>
-        {!currentUser ? (
-          <div>
-            <NavLink to="/login" exact>
-              Log In
-            </NavLink>
-          </div>
-        ) : null}
         {currentUser ? (
-          <div>
+          <div style={{ textAlign: "right" }}>
             <NavLink to="/appointments" exact>
               View Appointments
             </NavLink>
@@ -50,6 +43,13 @@ function NavBar() {
               View Patient Bill of Rights
             </NavLink>
             <button onClick={handleLogoutClick}>Logout</button>
+          </div>
+        ) : null}
+        {!currentUser ? (
+          <div style={{ textAlign: "right" }}>
+            <NavLink to="/login" exact>
+              Log In / Sign Up
+            </NavLink>
           </div>
         ) : null}
       </nav>

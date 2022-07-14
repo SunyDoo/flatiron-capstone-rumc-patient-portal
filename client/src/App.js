@@ -8,6 +8,7 @@ import LoginForm from "./Components/LoginForm";
 import Locations from "./Components/Locations";
 import WelcomeScreen from "./Components/WelcomeScreen";
 import FooterPage from "./Components/FooterPage";
+import SignUpForm from "./Components/SignUpForm";
 
 function App() {
   const [locations, setLocations] = useState([]);
@@ -53,6 +54,9 @@ function App() {
           </Route>
           <Route exact path="/login">
             {!currentUser ? <LoginForm /> : null}
+          </Route>
+          <Route exact path="/signup">
+            {!currentUser ? <SignUpForm /> : null}
           </Route>
         </Switch>
         <FooterPage />
