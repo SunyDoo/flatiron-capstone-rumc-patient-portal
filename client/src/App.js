@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { config } from "./Constants";
 import { UserContext } from "./UserContext";
-import NavBar from "./Components/NavBar";
 import Doctors from "./Components/Doctors";
 import LoginForm from "./Components/LoginForm";
 import Locations from "./Components/Locations";
 import WelcomeScreen from "./Components/WelcomeScreen";
 import FooterPage from "./Components/FooterPage";
 import SignUpForm from "./Components/SignUpForm";
+import NavbarPage from "./Components/NaveBarPage";
 
 function App() {
   const [locations, setLocations] = useState([]);
@@ -41,7 +41,7 @@ function App() {
   return (
     <UserContext.Provider value={{ currentUser, setCurrentUser }}>
       <div className="App">
-        <NavBar />
+        <NavbarPage />
         <Switch>
           <Route exact path="/">
             <WelcomeScreen />

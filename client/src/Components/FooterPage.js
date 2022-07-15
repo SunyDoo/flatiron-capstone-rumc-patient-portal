@@ -1,12 +1,12 @@
 import React from "react";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { MDBFooter, MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
 
-const FooterPage = () => {
+export default function App() {
   return (
-    <MDBFooter color="blue" className="font-small pt-4 mt-4">
-      <MDBContainer fluid className="text-center text-md-left">
+    <MDBFooter bgColor="primary" className="text-white text-lg-left">
+      <MDBContainer className="p-4">
         <MDBRow>
-          <MDBCol md="6">
+          <MDBCol lg="6" md="12" className="mb-4 mb-md-0">
             <img
               src="https://www.rumcsi.org/wp-content/uploads/2020/09/rumc-logo-white.svg"
               alt="logo"
@@ -20,14 +20,16 @@ const FooterPage = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href="https://www.flatironschool.com"> Flatiron School </a>
-        </MDBContainer>
+
+      <div
+        className="text-center p-3"
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+      >
+        &copy; {new Date().getFullYear()} Copyright:{" "}
+        <a className="text-white" href="https://mdbootstrap.com/">
+          MDBootstrap.com
+        </a>
       </div>
     </MDBFooter>
   );
-};
-
-export default FooterPage;
+}

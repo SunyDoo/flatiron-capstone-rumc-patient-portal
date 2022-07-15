@@ -15,8 +15,6 @@
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
-    "mdb-react-ui-kit": "^4.1.0",
-    "mdbreact": "^5.2.0",
     "navbar": "^2.1.0",
     "react-responsive-carousel": "^3.2.23",
     "serve": "^13.0.4"
