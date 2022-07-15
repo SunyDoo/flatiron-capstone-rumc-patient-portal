@@ -33,7 +33,7 @@ export default function NavbarPage() {
       className="text-white"
     >
       <MDBContainer fluid>
-        <MDBNavbarBrand href="#">
+        <MDBNavbarBrand href="/">
           <img
             src="https://www.rumcsi.org/wp-content/uploads/2020/09/rumc-logo-white.svg"
             alt="logo"
@@ -50,11 +50,7 @@ export default function NavbarPage() {
 
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav sticky className="mr-auto mb-2 mb-lg-0">
-            <MDBNavbarItem>
-              <MDBNavbarLink active aria-current="page" href="/">
-                Welcome
-              </MDBNavbarLink>
-            </MDBNavbarItem>
+
             <MDBNavbarItem>
               <MDBNavbarLink href="/doctors">Our Team</MDBNavbarLink>
             </MDBNavbarItem>

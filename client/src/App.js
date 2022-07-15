@@ -53,7 +53,9 @@ function App() {
             <Locations locations={locations} />
           </Route>
           <Route exact path="/login">
-            {!currentUser ? <LoginForm /> : null}
+            {!currentUser ? <LoginForm /> : 
+            <WelcomeScreen />
+            }
           </Route>
           <Route exact path="/signup">
             {!currentUser ? <SignUpForm /> : null}
