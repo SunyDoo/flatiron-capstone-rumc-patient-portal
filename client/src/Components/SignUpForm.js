@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
+import { MDBInput, MDBBtn } from "mdb-react-ui-kit";
 
 function SignUpForm() {
   const [first_name, setFirstName] = useState("");
@@ -20,7 +21,7 @@ function SignUpForm() {
       password,
       insurance,
     };
-    console.log(user);
+    // console.log(user);
     fetch("/signup", {
       method: "POST",
       headers: {
@@ -37,44 +38,47 @@ function SignUpForm() {
   }
 
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
       <form onSubmit={handleSubmit}>
-        <label>
-          First Name
-          <input
-            type="text"
-            id="firstName"
-            value={first_name}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-        </label>
-        <label>
-          Last Name
-          <input
-            type="text"
-            id="lastName"
-            value={last_name}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </label>
-        <label>
-          Username
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
+        <MDBInput
+          className="mb-4"
+          type="text"
+          id="firstName"
+          label="First Name"
+          value={first_name}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+        <MDBInput
+          className="mb-4"
+          type="text"
+          id="lastName"
+          label="Last Name"
+          value={last_name}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+        <MDBInput
+          className="mb-4"
+          type="text"
+          id="username"
+          label="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <MDBInput
+          className="mb-4"
+          type="password"
+          id="password"
+          label="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <label>
           Insurance Provider
           <select
@@ -94,9 +98,9 @@ function SignUpForm() {
           </select>
         </label>
         <button type="submit">Sign Up</button>
+        {errors ? errors.map((err) => <li key={err}>{err}</li>) : null}
       </form>
-      {errors ? errors.map((err) => <p key={err}>{err}</p>) : null}
-    </>
+    </div>
   );
 }
 

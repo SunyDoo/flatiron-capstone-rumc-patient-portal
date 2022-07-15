@@ -1,14 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import { NavLink } from "react-router-dom";
-import {
-  MDBInput,
-  MDBCol,
-  MDBRow,
-  MDBCheckbox,
-  MDBBtn,
-  MDBIcon,
-} from "mdb-react-ui-kit";
+import { MDBInput, MDBBtn } from "mdb-react-ui-kit";
 
 function LoginForm() {
   const [username, setUsername] = useState("");
