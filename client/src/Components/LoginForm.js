@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import { NavLink } from "react-router-dom";
 import { MDBInput, MDBBtn } from "mdb-react-ui-kit";
+// import { config } from "../Constants";
 
 function LoginForm() {
   const [username, setUsername] = useState("");
@@ -15,7 +16,8 @@ function LoginForm() {
       username,
       password,
     };
-    fetch("/login", {
+    console.log(currentUser);
+    fetch(`/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,9 +59,7 @@ function LoginForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <MDBBtn type="submit" block>
-          Log In
-        </MDBBtn>
+        <MDBBtn type="submit">Log In</MDBBtn>
         <div className="text-center">
           <NavLink to="/signup" exact>
             New Patient?
@@ -73,33 +73,3 @@ function LoginForm() {
 }
 
 export default LoginForm;
-
-{
-  /* <>
-      <form onSubmit={handleSubmit}>
-        <label>Username</label>
-        <input
-          type="text"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <span>
-          <button type="submit">Log In</button>
-          <NavLink to="/signup" exact>
-            Log In / Sign Up
-          </NavLink>
-        </span>
-      </form>
-      {errors ? errors.map((err) => <p key={err}>{err}</p>) : null}
-    </>
-  );
-} */
-}

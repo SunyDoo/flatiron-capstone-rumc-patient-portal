@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
-import { MDBInput, MDBBtn } from "mdb-react-ui-kit";
+import { MDBInput } from "mdb-react-ui-kit";
+// import { config } from "../Constants";
 
 function SignUpForm() {
   const [first_name, setFirstName] = useState("");
@@ -22,7 +23,7 @@ function SignUpForm() {
       insurance,
     };
     // console.log(user);
-    fetch("/signup", {
+    fetch(`/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

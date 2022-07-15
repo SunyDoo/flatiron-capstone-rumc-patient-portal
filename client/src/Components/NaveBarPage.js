@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
+// import { config } from "../Constants";
 import {
   MDBContainer,
   MDBNavbar,
@@ -17,7 +18,7 @@ export default function NavbarPage() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
   function handleLogoutClick() {
-    fetch("/logout", { method: "DELETE" }).then((res) => {
+    fetch(`/logout`, { method: "DELETE" }).then((res) => {
       if (res.ok) {
         setCurrentUser(null);
       }
@@ -27,7 +28,7 @@ export default function NavbarPage() {
   return (
     <MDBNavbar
       expand="lg"
-      sticky
+      sticky="true"
       light
       bgColor="primary"
       className="text-white"
@@ -49,8 +50,7 @@ export default function NavbarPage() {
         </MDBNavbarToggler>
 
         <MDBCollapse navbar show={showBasic}>
-          <MDBNavbarNav sticky className="mr-auto mb-2 mb-lg-0">
-
+          <MDBNavbarNav sticky="true" className="mr-auto mb-2 mb-lg-0">
             <MDBNavbarItem>
               <MDBNavbarLink href="/doctors">Our Team</MDBNavbarLink>
             </MDBNavbarItem>
@@ -94,7 +94,7 @@ export default function NavbarPage() {
                 <MDBNavbarLink
                   className="d-flex input-group w-auto"
                   href="/login"
-                  exact
+                  exact="true"
                 >
                   Log In / Sign Up
                 </MDBNavbarLink>

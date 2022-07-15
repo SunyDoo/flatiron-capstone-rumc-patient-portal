@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-import { config } from "./Constants";
+// import { config } from "./Constants";
 import { UserContext } from "./UserContext";
 import Doctors from "./Components/Doctors";
 import LoginForm from "./Components/LoginForm";
@@ -16,20 +16,20 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    fetch(`${config.url}/locations`)
+    fetch(`/locations`)
       .then((r) => r.json())
       .then((data) => setLocations(data));
   }, []);
 
   useEffect(() => {
-    fetch(`${config.url}/doctors`)
+    fetch(`/doctors`)
       .then((r) => r.json())
       .then((data) => setDoctors(data));
   }, []);
 
   useEffect(() => {
     // auto-login
-    fetch("/auth").then((res) => {
+    fetch(`/auth`).then((res) => {
       if (res.ok) {
         res.json().then((user) => setCurrentUser(user));
       }
@@ -53,9 +53,7 @@ function App() {
             <Locations locations={locations} />
           </Route>
           <Route exact path="/login">
-            {!currentUser ? <LoginForm /> : 
-            <WelcomeScreen />
-            }
+            {!currentUser ? <LoginForm /> : <WelcomeScreen />}
           </Route>
           <Route exact path="/signup">
             {!currentUser ? <SignUpForm /> : null}
