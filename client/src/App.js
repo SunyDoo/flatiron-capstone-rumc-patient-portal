@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 // import { config } from "./Constants";
 import { UserContext } from "./UserContext";
+import { AppointmentContext } from "./AppointmentContext";
 import Doctors from "./Components/Doctors";
 import LoginForm from "./Components/LoginForm";
 import Locations from "./Components/Locations";
@@ -14,6 +15,7 @@ function App() {
   const [locations, setLocations] = useState([]);
   const [doctors, setDoctors] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
+  const [appointments, setAppointments] = useState(null);
 
   useEffect(() => {
     fetch(`/locations`)
@@ -31,36 +33,46 @@ function App() {
     // auto-login
     fetch(`/auth`).then((res) => {
       if (res.ok) {
-        res.json().then((user) => setCurrentUser(user));
+        res
+          .json()
+          .then((user) => setCurrentUser(user))
+          .then(
+            fetch(`/appointments`)
+              .then((r) => r.json())
+              .then((data) => setAppointments(data))
+          );
       }
     });
   }, []);
 
   // console.log(`Running in ${process.env.NODE_ENV}`);
+  // console.log(appointments[0].patient.id);
 
   return (
     <UserContext.Provider value={{ currentUser, setCurrentUser }}>
-      <div className="App">
-        <NavbarPage />
-        <Switch>
-          <Route exact path="/">
-            <WelcomeScreen />
-          </Route>
-          <Route exact path="/doctors">
-            <Doctors doctors={doctors} />
-          </Route>
-          <Route exact path="/locations">
-            <Locations locations={locations} />
-          </Route>
-          <Route exact path="/login">
-            {!currentUser ? <LoginForm /> : <WelcomeScreen />}
-          </Route>
-          <Route exact path="/signup">
-            {!currentUser ? <SignUpForm /> : null}
-          </Route>
-        </Switch>
-        <FooterPage />
-      </div>
+      <AppointmentContext.Provider value={{ appointments, setAppointments }}>
+        <div className="App">
+          <NavbarPage />
+          <Switch>
+            <Route exact path="/">
+              <WelcomeScreen />
+            </Route>
+            <Route exact path="/doctors">
+              <Doctors doctors={doctors} />
+            </Route>
+            <Route exact path="/locations">
+              <Locations locations={locations} />
+            </Route>
+            <Route exact path="/login">
+              {!currentUser ? <LoginForm /> : <WelcomeScreen />}
+            </Route>
+            <Route exact path="/signup">
+              {!currentUser ? <SignUpForm /> : null}
+            </Route>
+          </Switch>
+          <FooterPage />
+        </div>
+      </AppointmentContext.Provider>
     </UserContext.Provider>
   );
 }

@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: %i[ show update destroy ]
-
+  skip_before_action :authorize
   # GET /appointments
   def index
     @appointments = Appointment.all
