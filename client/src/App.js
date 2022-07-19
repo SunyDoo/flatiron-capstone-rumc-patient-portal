@@ -10,6 +10,7 @@ import WelcomeScreen from "./Components/WelcomeScreen";
 import FooterPage from "./Components/FooterPage";
 import SignUpForm from "./Components/SignUpForm";
 import NavbarPage from "./Components/NaveBarPage";
+import Appointments from "./Components/Appointments";
 
 function App() {
   const [locations, setLocations] = useState([]);
@@ -68,6 +69,9 @@ function App() {
             </Route>
             <Route exact path="/signup">
               {!currentUser ? <SignUpForm /> : null}
+            </Route>
+            <Route exact path="/makeappointment">
+              <Appointments doctors={doctors}/>
             </Route>
           </Switch>
           <FooterPage />

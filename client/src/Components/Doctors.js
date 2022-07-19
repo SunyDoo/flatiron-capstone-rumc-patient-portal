@@ -8,17 +8,18 @@ import {
   MDBCardImage,
   MDBRow,
   MDBCol,
+  MDBBtn,
 } from "mdb-react-ui-kit";
 
-function Doctors({ doctors }) { 
+function Doctors({ doctors }) {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
 
   const docsToDisplay = doctors.filter((doc) => {
     if (selectedDepartment === "All") return true;
 
     return doc.specialty === selectedDepartment;
-  })
-  
+  });
+
   return (
     <>
       <FilterDocs
@@ -50,6 +51,9 @@ function Doctors({ doctors }) {
                       <br></br>
                       <small className="text-muted">{doc.phone_number}</small>
                     </MDBCardText>
+                    <MDBBtn onClick={() => console.log(doc.id)}>
+                      Make Appointment
+                    </MDBBtn>
                   </MDBCardBody>
                 </MDBCol>
               </MDBRow>
