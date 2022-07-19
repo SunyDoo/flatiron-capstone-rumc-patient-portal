@@ -15,7 +15,6 @@ function ViewAppointments() {
   const { appointments } = useContext(AppointmentContext);
   //   const { currentUser } = useContext(UserContext);
 
-  console.log(appointments);
 
   return (
     <>
