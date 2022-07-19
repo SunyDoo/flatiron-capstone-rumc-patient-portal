@@ -8,7 +8,6 @@ import {
   MDBCardImage,
   MDBRow,
   MDBCol,
-  MDBBtn,
 } from "mdb-react-ui-kit";
 
 function Doctors({ doctors }) {
@@ -51,9 +50,6 @@ function Doctors({ doctors }) {
                       <br></br>
                       <small className="text-muted">{doc.phone_number}</small>
                     </MDBCardText>
-                    <MDBBtn onClick={() => console.log(doc.id)}>
-                      Make Appointment
-                    </MDBBtn>
                   </MDBCardBody>
                 </MDBCol>
               </MDBRow>

@@ -43,7 +43,9 @@ function NavBar() {
             <NavLink to="/billofrights" exact>
               View Patient Bill of Rights
             </NavLink>
-            <button onClick={handleLogoutClick}>Logout</button>
+            <NavLink to="/" exact>
+              <button onClick={handleLogoutClick}>Logout</button>
+            </NavLink>
           </div>
         ) : null}
         {!currentUser ? (

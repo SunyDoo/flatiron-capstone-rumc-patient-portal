@@ -15,7 +15,7 @@ import {
 function Appointments({ doctors }) {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const [appointmentForm, setAppointmentForm] = useState(false);
-  const [selectedDoc, setSelectedDoc] = useState(null);
+  const [selectedDocId, setSelectedDocId] = useState(null);
 
   const docsToDisplay = doctors.filter((doc) => {
     if (selectedDepartment === "All") return true;
@@ -27,9 +27,10 @@ function Appointments({ doctors }) {
   }
   function setDoc(e) {
     setAppointmentForm((appointmentForm) => !appointmentForm);
-    setSelectedDoc(doctors.filter((doc) => doc.id === e.target.id));
+    setSelectedDocId(e.target.id);
   }
-  console.log(selectedDoc);
+
+  //   console.log(selectDoc);
 
   return (
     <>
@@ -88,7 +89,7 @@ function Appointments({ doctors }) {
           }}
         >
           <div>
-            <Calendar />
+            <Calendar docId={selectedDocId} />
           </div>
           <br></br>
           <MDBBtn onClick={toggleForm}>Return to Doctors</MDBBtn>

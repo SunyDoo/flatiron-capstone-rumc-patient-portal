@@ -11,6 +11,7 @@ import FooterPage from "./Components/FooterPage";
 import SignUpForm from "./Components/SignUpForm";
 import NavbarPage from "./Components/NaveBarPage";
 import Appointments from "./Components/Appointments";
+import ViewAppointments from "./Components/ViewAppointments";
 
 function App() {
   const [locations, setLocations] = useState([]);
@@ -34,20 +35,16 @@ function App() {
     // auto-login
     fetch(`/auth`).then((res) => {
       if (res.ok) {
-        res
-          .json()
-          .then((user) => setCurrentUser(user))
-          .then(
-            fetch(`/appointments`)
-              .then((r) => r.json())
-              .then((data) => setAppointments(data))
-          );
+        res.json().then((user) => {
+          setCurrentUser(user);
+          setAppointments(user.appointments);
+        });
       }
     });
   }, []);
 
   // console.log(`Running in ${process.env.NODE_ENV}`);
-  // console.log(appointments[0].patient.id);
+  console.log(appointments);
 
   return (
     <UserContext.Provider value={{ currentUser, setCurrentUser }}>
@@ -71,7 +68,10 @@ function App() {
               {!currentUser ? <SignUpForm /> : null}
             </Route>
             <Route exact path="/makeappointment">
-              <Appointments doctors={doctors}/>
+              <Appointments doctors={doctors} />
+            </Route>
+            <Route exact path="/appointment">
+              <ViewAppointments />
             </Route>
           </Switch>
           <FooterPage />
