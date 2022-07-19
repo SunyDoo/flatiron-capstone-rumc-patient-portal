@@ -15,9 +15,9 @@ function ViewAppointments() {
   const { appointments } = useContext(AppointmentContext);
   //   const { currentUser } = useContext(UserContext);
 
-
   return (
     <>
+      <h2>Your Upcoming Appointments:</h2>
       <div
         style={{
           display: "flex",
@@ -25,29 +25,44 @@ function ViewAppointments() {
           alignItems: "center",
         }}
       >
-        <ul>
-          {appointments.map((appt) => (
-            <MDBCard style={{ maxWidth: "540px" }} key={appt.id}>
-              <MDBRow className="g-0">
-                <MDBCol md="8">
-                  <MDBCardBody>
-                    <MDBCardTitle>{appt.doctor.name}</MDBCardTitle>
-                    <MDBCardText>
-                      <small className="text-muted">
-                        {appt.doctor.location.name}
-                      </small>
-                      <br></br>
-                      <small>{appt.date_time}</small>
-                    </MDBCardText>
-                    <MDBBtn onClick={() => console.log(appt)}>
-                      Change Appointment
-                    </MDBBtn>
-                  </MDBCardBody>
-                </MDBCol>
-              </MDBRow>
-            </MDBCard>
-          ))}
-        </ul>
+        {appointments ? (
+          <ul>
+            {appointments.map((appointment) => (
+              <MDBCard style={{ maxWidth: "540px" }} key={appointment.id}>
+                <MDBRow className="g-0">
+                  <MDBCol md="8">
+                    <MDBCardBody>
+                      <MDBCardTitle>{appointment.doctor.name}</MDBCardTitle>
+                      <MDBCardText>
+                        {/* <small className="text-muted">
+                        {appointment.doctor.location.name}
+                      </small> */}
+                        <br></br>
+                        <small>
+                          {new Date(appointment.date_time).toDateString()}
+                        </small>
+                        <br></br>
+                        <small>
+                          {new Date(appointment.date_time).toLocaleTimeString(
+                            "en-US"
+                          )}
+                        </small>
+                      </MDBCardText>
+                      <div>
+                        <MDBBtn onClick={() => console.log(appointment)}>
+                          Change Appointment
+                        </MDBBtn>
+                        <MDBBtn onClick={() => console.log(appointment)}>
+                          Cancel Appointment
+                        </MDBBtn>
+                      </div>
+                    </MDBCardBody>
+                  </MDBCol>
+                </MDBRow>
+              </MDBCard>
+            ))}
+          </ul>
+        ) : null}
       </div>
     </>
   );

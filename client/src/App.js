@@ -44,7 +44,8 @@ function App() {
   }, []);
 
   // console.log(`Running in ${process.env.NODE_ENV}`);
-  console.log(appointments);
+ 
+  // console.log(doctors);
 
   return (
     <UserContext.Provider value={{ currentUser, setCurrentUser }}>
@@ -70,7 +71,7 @@ function App() {
             <Route exact path="/makeappointment">
               <Appointments doctors={doctors} />
             </Route>
-            <Route exact path="/appointment">
+            <Route exact path="/appointments">
               <ViewAppointments />
             </Route>
           </Switch>

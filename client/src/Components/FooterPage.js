@@ -6,13 +6,13 @@ export default function App() {
     <MDBFooter
       bgColor="primary"
       className="text-white text-lg-left"
-      style={{
-        position: "fixed",
-        left: "0",
-        bottom: "0",
-        height: "175px",
-        width: "100%",
-      }}
+      // style={{
+      //   position: "flex",
+      //   left: "0",
+      //   bottom: "0",
+      //   height: "175px",
+      //   width: "100%",
+      // }}
     >
       <MDBContainer className="p-4">
         <MDBRow>
