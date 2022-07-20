@@ -11,7 +11,7 @@ class DoctorsController < ApplicationController
 
   # GET /doctors/1
   def show
-    render json: @doctor
+    render json: @doctor, include: ['location']
   end
 
   # # POST /doctors
