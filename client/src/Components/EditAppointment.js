@@ -57,9 +57,6 @@ function EditAppointment({
     }).then(() => handleDelete(appointment));
   }
 
-  console.log(appointment);
-
-
   return (
     <>
       <DatePicker
@@ -115,7 +112,6 @@ function EditAppointment({
         ) : null}
       </MDBBtnGroup>
       {errors ? errors.map((err) => <p key={err}>{err}</p>) : null}
-      {console.log(errors)}
     </>
   );
 }
