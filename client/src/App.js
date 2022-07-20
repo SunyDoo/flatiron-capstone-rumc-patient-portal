@@ -13,6 +13,7 @@ import NavbarPage from "./Components/NaveBarPage";
 import Appointments from "./Components/Appointments";
 import ViewAppointments from "./Components/ViewAppointments";
 import Testimonials from "./Components/Testimonials";
+import FeedbackForm from "./Components/FeedbackForm";
 
 function App() {
   const [locations, setLocations] = useState([]);
@@ -36,7 +37,10 @@ function App() {
   useEffect(() => {
     fetch(`/testimonials`)
       .then((r) => r.json())
-      .then((data) => setTestimonials(data));
+      .then((data) => {
+        const positiveData = data.filter((test) => test.recommend);
+        setTestimonials(positiveData);
+      });
   }, []);
 
   useEffect(() => {
@@ -70,6 +74,13 @@ function App() {
             </Route>
             <Route exact path="/testimonials">
               <Testimonials testimonials={testimonials} />
+            </Route>
+            <Route exact path="/leavefeedback">
+              <FeedbackForm
+                locations={locations}
+                testimonials={testimonials}
+                setTestimonials={setTestimonials}
+              />
             </Route>
             <Route exact path="/login">
               {!currentUser ? <LoginForm /> : <WelcomeScreen />}

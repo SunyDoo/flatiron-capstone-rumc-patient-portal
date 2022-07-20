@@ -7,6 +7,8 @@ import {
 } from "mdb-react-ui-kit";
 
 function Testimonials({ testimonials }) {
+
+    
   return (
     <>
       {testimonials.map((testimonial) => (
