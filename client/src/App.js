@@ -12,12 +12,14 @@ import SignUpForm from "./Components/SignUpForm";
 import NavbarPage from "./Components/NaveBarPage";
 import Appointments from "./Components/Appointments";
 import ViewAppointments from "./Components/ViewAppointments";
+import Testimonials from "./Components/Testimonials";
 
 function App() {
   const [locations, setLocations] = useState([]);
   const [doctors, setDoctors] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
   const [appointments, setAppointments] = useState(null);
+  const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
     fetch(`/locations`)
@@ -29,6 +31,12 @@ function App() {
     fetch(`/doctors`)
       .then((r) => r.json())
       .then((data) => setDoctors(data));
+  }, []);
+
+  useEffect(() => {
+    fetch(`/testimonials`)
+      .then((r) => r.json())
+      .then((data) => setTestimonials(data));
   }, []);
 
   useEffect(() => {
@@ -44,8 +52,6 @@ function App() {
   }, []);
 
   // console.log(`Running in ${process.env.NODE_ENV}`);
- 
-  // console.log(doctors);
 
   return (
     <UserContext.Provider value={{ currentUser, setCurrentUser }}>
@@ -62,6 +68,9 @@ function App() {
             <Route exact path="/locations">
               <Locations locations={locations} />
             </Route>
+            <Route exact path="/testimonials">
+              <Testimonials testimonials={testimonials} />
+            </Route>
             <Route exact path="/login">
               {!currentUser ? <LoginForm /> : <WelcomeScreen />}
             </Route>
@@ -72,7 +81,7 @@ function App() {
               <Appointments doctors={doctors} />
             </Route>
             <Route exact path="/appointments">
-              <ViewAppointments locations={locations}/>
+              <ViewAppointments locations={locations} />
             </Route>
           </Switch>
           <FooterPage />
