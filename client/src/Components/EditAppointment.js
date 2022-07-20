@@ -57,7 +57,8 @@ function EditAppointment({
     }).then(() => handleDelete(appointment));
   }
 
-  console.log(errors);
+  console.log(appointment);
+
 
   return (
     <>

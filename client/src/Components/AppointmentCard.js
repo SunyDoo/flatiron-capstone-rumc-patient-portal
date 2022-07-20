@@ -8,6 +8,7 @@ import {
   MDBRow,
   MDBCol,
   MDBBtn,
+  MDBCardSubTitle
 } from "mdb-react-ui-kit";
 import EditAppointment from "./EditAppointment";
 
@@ -22,9 +23,6 @@ function AppointmentCard({ appointment, locations }) {
     setAppointments(updatedAppointments);
   }
 
-  //   const appointmentLocation = locations.filter(
-  //     (location) => location.id === appointment.doctor.location_id
-  //   );
 
 
   return (
@@ -34,9 +32,9 @@ function AppointmentCard({ appointment, locations }) {
           <MDBCol md="8">
             <MDBCardBody>
               <MDBCardTitle>{appointment.doctor.name}</MDBCardTitle>
-              {/* <MDBCardSubTitle>{apptLocation[0].name} </MDBCardSubTitle> */}
+              <MDBCardSubTitle>{appointment.location.name} </MDBCardSubTitle>
               <MDBCardText>
-                {/* <small>{apptLocation[0].address} </small> */}
+                <small>{appointment.location.address} </small>
                 <br></br>
                 <small>{new Date(appointment.date_time).toDateString()}</small>
                 <br></br>
