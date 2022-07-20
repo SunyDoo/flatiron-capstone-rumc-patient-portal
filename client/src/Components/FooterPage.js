@@ -3,17 +3,7 @@ import { MDBFooter, MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
 
 export default function App() {
   return (
-    <MDBFooter
-      bgColor="primary"
-      className="text-white text-lg-left"
-      style={{
-        position: "flex",
-        left: "0",
-        bottom: "0",
-        height: "175px",
-        width: "100%",
-      }}
-    >
+    <MDBFooter bgColor="primary" className="text-white text-lg-left">
       <MDBContainer className="p-4">
         <MDBRow>
           <MDBCol lg="6" md="12" className="mb-4 mb-md-0">
@@ -30,7 +20,6 @@ export default function App() {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-
       <div
         className="text-center p-3"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
@@ -43,3 +32,11 @@ export default function App() {
     </MDBFooter>
   );
 }
+
+//  style={{
+//   position: "flex",
+//   left: "0",
+//   bottom: "0",
+//   height: "175px",
+//   width: "100%",
+// }} 

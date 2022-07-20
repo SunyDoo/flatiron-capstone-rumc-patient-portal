@@ -4,26 +4,40 @@ import DatePicker from "react-datepicker";
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 import "react-datepicker/dist/react-datepicker.css";
-import { MDBBtn } from "mdb-react-ui-kit";
+// import { MDBDatepicker } from 'mdb-react-ui-kit';
 
 function EditAppointment({ appointment, setEditAppointment, handleDelete }) {
-  const [startDate, setStartDate] = useState(appointment.date_time);
+  const [startDate, setStartDate] = useState("");
   const { appointments, setAppointments } = useContext(AppointmentContext);
 
-  //   function handleFormSubmit(e) {
-  //     e.preventDefault();
-  //     fetch(`/appointments/${appointment.id}`, {
-  //       method: "PATCH",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         date_time: startDate,
-  //       }),
-  //     })
-  //       .then((res) => res.json())
-  //       .then((updatedAppointment) => updateAppointments(updatedAppointment));
-  //   }
+  console.log(startDate);
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    setEditAppointment(false);
+    fetch(`/appointments/${appointment.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        date_time: startDate,
+      }),
+    })
+      .then((res) => res.json())
+      .then((updatedAppointment) => updateAppointments(updatedAppointment));
+  }
+
+  function updateAppointments(updatedAppointment) {
+    const updatedAppointments = appointments.map((appointments) => {
+      if (appointments.id === updatedAppointment.id) {
+        return updatedAppointment;
+      } else {
+        return appointments;
+      }
+    });
+    setAppointments(updatedAppointments);
+  }
 
   function handleDeleteClick() {
     fetch(`/appointments/${appointment.id}`, {
@@ -33,7 +47,7 @@ function EditAppointment({ appointment, setEditAppointment, handleDelete }) {
 
   return (
     <>
-      {/* <DatePicker
+      <DatePicker
         selected={startDate}
         onChange={(date) => setStartDate(date)}
         showTimeSelect
@@ -59,12 +73,11 @@ function EditAppointment({ appointment, setEditAppointment, handleDelete }) {
         ]}
         dateFormat="MMMM d, yyyy h:mm aa"
         placeholderText="Select Date and Time"
-      /> */}
-      {console.log(appointment.date_time)}
-      <MDBBtn type="submit" onClick={() => setEditAppointment(false)}>
+      />
+      <button type="submit" onClick={handleFormSubmit}>
         Confirm Change
-      </MDBBtn>
-      <MDBBtn onClick={handleDeleteClick}>Cancel Appointment</MDBBtn>
+      </button>
+      <button onClick={handleDeleteClick}>Cancel Appointment</button>
     </>
   );
 }
