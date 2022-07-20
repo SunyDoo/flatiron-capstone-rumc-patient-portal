@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FilterDocs from "./FilterDocs";
+import FilterInsurance from "./FilterInsurance";
 import Calendar from "./Calendar";
 import {
   MDBCard,
@@ -16,12 +17,20 @@ function Appointments({ doctors }) {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const [appointmentForm, setAppointmentForm] = useState(false);
   const [selectedDocId, setSelectedDocId] = useState(null);
+  const [selectedInsurance, setSelectedInsurance] = useState("All");
 
   const docsToDisplay = doctors.filter((doc) => {
     if (selectedDepartment === "All") return true;
 
     return doc.specialty === selectedDepartment;
   });
+
+  const filteredDocs = docsToDisplay.filter((doc) => {
+    if (selectedInsurance === "All") return true;
+
+    return doc.network.includes(selectedInsurance);
+  });
+
   function toggleForm() {
     setAppointmentForm((appointmentForm) => !appointmentForm);
   }
@@ -36,6 +45,10 @@ function Appointments({ doctors }) {
     <>
       {!appointmentForm ? (
         <div className="doctors">
+          <FilterInsurance
+            selectedInsurance={selectedInsurance}
+            setSelectedInsurance={setSelectedInsurance}
+          />
           <FilterDocs
             selectedDepartment={selectedDepartment}
             setSelectedDepartment={setSelectedDepartment}
@@ -48,7 +61,7 @@ function Appointments({ doctors }) {
             }}
           >
             <ul>
-              {docsToDisplay.map((doc) => (
+              {filteredDocs.map((doc) => (
                 <MDBCard style={{ maxWidth: "540px" }} key={doc.id}>
                   <MDBRow className="g-0">
                     <MDBCol md="4">

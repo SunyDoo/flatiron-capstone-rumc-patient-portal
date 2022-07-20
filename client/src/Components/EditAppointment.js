@@ -4,13 +4,16 @@ import DatePicker from "react-datepicker";
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 import "react-datepicker/dist/react-datepicker.css";
-// import { MDBDatepicker } from 'mdb-react-ui-kit';
+import { MDBBtn, MDBBtnGroup } from "mdb-react-ui-kit";
 
-function EditAppointment({ appointment, setEditAppointment, handleDelete }) {
+function EditAppointment({
+  appointment,
+  setEditAppointment,
+  handleDelete,
+  editAppointment,
+}) {
   const [startDate, setStartDate] = useState("");
   const { appointments, setAppointments } = useContext(AppointmentContext);
-
-  console.log(startDate);
 
   function handleFormSubmit(e) {
     e.preventDefault();
@@ -74,10 +77,30 @@ function EditAppointment({ appointment, setEditAppointment, handleDelete }) {
         dateFormat="MMMM d, yyyy h:mm aa"
         placeholderText="Select Date and Time"
       />
-      <button type="submit" onClick={handleFormSubmit}>
-        Confirm Change
-      </button>
-      <button onClick={handleDeleteClick}>Cancel Appointment</button>
+      <MDBBtnGroup aria-label="Basic example">
+        <MDBBtn type="submit" onClick={handleFormSubmit} outline size="sm">
+          Confirm Change
+        </MDBBtn>
+        <MDBBtn
+          onClick={handleDeleteClick}
+          outline
+          className="mx-2"
+          color="danger"
+          size="sm"
+        >
+          Cancel Appointment
+        </MDBBtn>
+        {editAppointment ? (
+          <MDBBtn
+            type="submit"
+            onClick={() => setEditAppointment(false)}
+            outline
+            size="sm"
+          >
+            Cancel Change
+          </MDBBtn>
+        ) : null}
+      </MDBBtnGroup>
     </>
   );
 }

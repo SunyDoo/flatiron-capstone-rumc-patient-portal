@@ -11,16 +11,18 @@ import {
 } from "mdb-react-ui-kit";
 import EditAppointment from "./EditAppointment";
 
-function AppointmentCard({
-  appointment,
-}) {
-    const [editAppointment, setEditAppointment] = useState(false);
+function AppointmentCard({ appointment }) {
+  const [editAppointment, setEditAppointment] = useState(false);
   const { appointments, setAppointments } = useContext(AppointmentContext);
 
-function handleDelete(deletedAppointment) {
-    const updatedAppointments = appointments.filter((appointment) => appointment.id !== deletedAppointment.id);
+  function handleDelete(deletedAppointment) {
+    const updatedAppointments = appointments.filter(
+      (appointment) => appointment.id !== deletedAppointment.id
+    );
     setAppointments(updatedAppointments);
   }
+
+  console.log(appointment);
 
   return (
     <ul>
@@ -43,15 +45,15 @@ function handleDelete(deletedAppointment) {
                   )}
                 </small>
               </MDBCardText>
-              {!editAppointment? 
-              <MDBBtn
-                onClick=
-                {() =>
-                  setEditAppointment((editAppointment) => !editAppointment)
-                }
-              >
-                Change Appointment
-              </MDBBtn>:null}
+              {!editAppointment ? (
+                <MDBBtn
+                  onClick={() =>
+                    setEditAppointment((editAppointment) => !editAppointment)
+                  }
+                >
+                  Change Appointment
+                </MDBBtn>
+              ) : null}
             </MDBCardBody>
           </MDBCol>
         </MDBRow>
@@ -60,6 +62,7 @@ function handleDelete(deletedAppointment) {
             appointment={appointment}
             handleDelete={handleDelete}
             setEditAppointment={setEditAppointment}
+            editAppointment={editAppointment}
           />
         ) : null}
       </MDBCard>
