@@ -2,8 +2,7 @@ class Patient < ApplicationRecord
     #associations
     has_many :testimonials
     has_many :appointments
-    has_many :doctors, through: :appointments
-    
+    has_many :doctors, -> { distinct }, through: :appointments
 
     #Validations
     has_secure_password
