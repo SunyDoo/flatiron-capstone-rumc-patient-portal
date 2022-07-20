@@ -3,10 +3,10 @@ import { AppointmentContext } from "../AppointmentContext";
 import AppointmentCard from "./AppointmentCard";
 // import { UserContext } from "../UserContext";
 
-function ViewAppointments() {
+function ViewAppointments({ locations }) {
   const { appointments, setAppointments } = useContext(AppointmentContext);
+  
 
-  //   const { currentUser } = useContext(UserContext);
 
   function updateAppointments(updatedAppointment) {
     const updatedAppointments = appointments.map((appointment) => {
@@ -35,6 +35,7 @@ function ViewAppointments() {
                 appointment={appointment}
                 key={appointment.id}
                 updateAppointments={updateAppointments}
+                locations={locations}
               />
             ))
           : null}

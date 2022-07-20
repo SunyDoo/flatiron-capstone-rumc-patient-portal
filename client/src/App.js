@@ -72,7 +72,7 @@ function App() {
               <Appointments doctors={doctors} />
             </Route>
             <Route exact path="/appointments">
-              <ViewAppointments />
+              <ViewAppointments locations={locations}/>
             </Route>
           </Switch>
           <FooterPage />

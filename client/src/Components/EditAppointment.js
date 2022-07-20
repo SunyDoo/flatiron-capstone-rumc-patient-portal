@@ -12,8 +12,11 @@ function EditAppointment({
   handleDelete,
   editAppointment,
 }) {
-  const [startDate, setStartDate] = useState("");
+  const [startDate, setStartDate] = useState(null);
   const { appointments, setAppointments } = useContext(AppointmentContext);
+  const [errors, setErrors] = useState([]);
+
+  const minDate = new Date();
 
   function handleFormSubmit(e) {
     e.preventDefault();
@@ -26,9 +29,15 @@ function EditAppointment({
       body: JSON.stringify({
         date_time: startDate,
       }),
-    })
-      .then((res) => res.json())
-      .then((updatedAppointment) => updateAppointments(updatedAppointment));
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((updatedAppointment) =>
+          updateAppointments(updatedAppointment)
+        );
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
+    });
   }
 
   function updateAppointments(updatedAppointment) {
@@ -48,10 +57,13 @@ function EditAppointment({
     }).then(() => handleDelete(appointment));
   }
 
+  console.log(errors);
+
   return (
     <>
       <DatePicker
         selected={startDate}
+        minDate={minDate.setDate(minDate.getDate() + 1)}
         onChange={(date) => setStartDate(date)}
         showTimeSelect
         excludeTimes={[
@@ -101,6 +113,8 @@ function EditAppointment({
           </MDBBtn>
         ) : null}
       </MDBBtnGroup>
+      {errors ? errors.map((err) => <p key={err}>{err}</p>) : null}
+      {console.log(errors)}
     </>
   );
 }

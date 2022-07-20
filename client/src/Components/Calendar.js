@@ -12,6 +12,7 @@ function Calendar({ docId }) {
   const { currentUser } = useContext(UserContext);
   const { appointments, setAppointments } = useContext(AppointmentContext);
   const [errors, setErrors] = useState([]);
+  const minDate = new Date();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -43,6 +44,7 @@ function Calendar({ docId }) {
     <>
       <DatePicker
         selected={startDate}
+        minDate={minDate.setDate(minDate.getDate() + 1)}
         onChange={(date) => setStartDate(date)}
         showTimeSelect
         excludeTimes={[

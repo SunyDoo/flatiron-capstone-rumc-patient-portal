@@ -11,7 +11,7 @@ import {
 } from "mdb-react-ui-kit";
 import EditAppointment from "./EditAppointment";
 
-function AppointmentCard({ appointment }) {
+function AppointmentCard({ appointment, locations }) {
   const [editAppointment, setEditAppointment] = useState(false);
   const { appointments, setAppointments } = useContext(AppointmentContext);
 
@@ -22,19 +22,21 @@ function AppointmentCard({ appointment }) {
     setAppointments(updatedAppointments);
   }
 
-  console.log(appointment);
+  //   const appointmentLocation = locations.filter(
+  //     (location) => location.id === appointment.doctor.location_id
+  //   );
+
 
   return (
     <ul>
-      <MDBCard style={{ maxWidth: "540px" }} key={appointment.id}>
+      <MDBCard style={{ maxWidth: "22rem" }} key={appointment.id}>
         <MDBRow className="g-0">
           <MDBCol md="8">
             <MDBCardBody>
               <MDBCardTitle>{appointment.doctor.name}</MDBCardTitle>
+              {/* <MDBCardSubTitle>{apptLocation[0].name} </MDBCardSubTitle> */}
               <MDBCardText>
-                {/* <small className="text-muted">
-                        {appointment.doctor.location.name}
-                      </small> */}
+                {/* <small>{apptLocation[0].address} </small> */}
                 <br></br>
                 <small>{new Date(appointment.date_time).toDateString()}</small>
                 <br></br>
