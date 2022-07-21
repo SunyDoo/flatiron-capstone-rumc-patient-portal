@@ -42,12 +42,14 @@ export default function App({ locations }) {
   });
 
   return (
-    <div>
-      <div className="sidebar">
-        Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+    <div className="float-container">
+      <div className="float-child">
+        <div className="sidebar">
+          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+        </div>
+        <div ref={mapContainer} className="map-container" />
       </div>
-      <div ref={mapContainer} className="map-container" />
-      <div>
+      <div className="float-child">
         <ul>
           {locations.map((loc) => (
             <li key={loc.id}>{loc.name}</li>
