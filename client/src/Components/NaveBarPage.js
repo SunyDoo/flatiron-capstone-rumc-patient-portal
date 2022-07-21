@@ -82,7 +82,9 @@ export default function NavbarPage() {
                     View Bill of Rights
                   </MDBNavbarLink>
                 </MDBNavbarItem>
-                <button onClick={handleLogoutClick}>Logout</button>
+                <MDBNavbarLink href="/" onClick={handleLogoutClick}>
+                  Logout
+                </MDBNavbarLink>
               </>
             ) : null}
 
