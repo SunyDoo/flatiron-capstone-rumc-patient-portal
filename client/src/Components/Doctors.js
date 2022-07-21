@@ -11,7 +11,6 @@ import {
 } from "mdb-react-ui-kit";
 
 function Doctors({ doctors }) {
-  console.log("hello");
   const [selectedDepartment, setSelectedDepartment] = useState("All");
 
   const docsToDisplay = doctors.filter((doc) => {

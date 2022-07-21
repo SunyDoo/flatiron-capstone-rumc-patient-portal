@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
-import { MDBCheckbox, MDBSelect } from "mdb-react-ui-kit";
+import { MDBCheckbox } from "mdb-react-ui-kit";
 
 function FeedbackForm({ testimonials, setTestimonials, locations }) {
   const [feedback, setFeedback] = useState("");
