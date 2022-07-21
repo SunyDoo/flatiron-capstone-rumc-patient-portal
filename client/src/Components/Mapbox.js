@@ -51,11 +51,17 @@ export default function App({ locations }) {
       </div>
       <div className="float-child">
         <ul>
-          {locations.map((loc) => (
-            <li key={loc.id}>{loc.name}</li>
-          ))}
+        {markers.markers.features.map((feature) => (
+    <li key={feature.properties.title}>{feature.properties.title}</li>
+  ))}
         </ul>
       </div>
     </div>
   );
 }
+
+
+
+//   {locations.map((loc) => (
+//     <li key={loc.id}>{loc.name}</li>
+//   ))}
