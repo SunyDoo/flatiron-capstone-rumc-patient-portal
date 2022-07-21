@@ -23,28 +23,42 @@ function App() {
   const [appointments, setAppointments] = useState(null);
   const [testimonials, setTestimonials] = useState([]);
 
+  // useEffect(() => {
+  //   fetch(`/locations`)
+  //     .then((r) => r.json())
+  //     .then((data) => setLocations(data));
+  // }, []);
+
+  // useEffect(() => {
+  //   fetch(`/doctors`)
+  //     .then((r) => r.json())
+  //     .then((data) => setDoctors(data));
+  // }, []);
+
+  // useEffect(() => {
+  //   fetch(`/testimonials`)
+  //     .then((r) => r.json())
+  //     .then((data) => {
+  //       const positiveData = data.filter((test) => test.recommend);
+  //       setTestimonials(positiveData);
+  //     });
+  // }, []);
+
   useEffect(() => {
     fetch(`/locations`)
       .then((r) => r.json())
       .then((data) => setLocations(data));
-  }, []);
 
-  useEffect(() => {
     fetch(`/doctors`)
       .then((r) => r.json())
       .then((data) => setDoctors(data));
-  }, []);
 
-  useEffect(() => {
     fetch(`/testimonials`)
       .then((r) => r.json())
       .then((data) => {
         const positiveData = data.filter((test) => test.recommend);
         setTestimonials(positiveData);
       });
-  }, []);
-
-  useEffect(() => {
     // auto-login
     fetch(`/auth`).then((res) => {
       if (res.ok) {
