@@ -11,7 +11,7 @@ function Calendar({ docId }) {
   const [startDate, setStartDate] = useState(null);
   const { currentUser } = useContext(UserContext);
   const { appointments, setAppointments } = useContext(AppointmentContext);
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState("");
   const minDate = new Date();
 
   function handleSubmit(e) {
@@ -32,10 +32,9 @@ function Calendar({ docId }) {
         r.json().then((newAppointment) => {
           setAppointments(...appointments, newAppointment);
           setStartDate(null);
-          console.log(newAppointment);
         });
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then(() => setErrors("Please select Date and Time"));
       }
     });
   }
@@ -70,7 +69,7 @@ function Calendar({ docId }) {
         dateFormat="MMMM d, yyyy h:mm aa"
         placeholderText="Select Date and Time"
       />
-      {errors ? errors.map((err) => <p key={err}>{err}</p>) : null}
+      {errors ? <p>{errors}</p> : null}
       <MDBBtn onClick={handleSubmit}>Make Appointment</MDBBtn>
     </>
   );

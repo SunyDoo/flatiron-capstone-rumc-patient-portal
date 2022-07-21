@@ -29,7 +29,7 @@ class AppointmentsController < ApplicationController
     if @appointment.update(appointment_params)
       render json: @appointment
     else 
-      render json: { errors: @appointment.errors.full_messages }, status: :unprocessable_entity
+      render json: @appointment.errors, status: :unprocessable_entity
     end
   end
 

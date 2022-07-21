@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-// import { config } from "./Constants";
 import { UserContext } from "./UserContext";
 import { AppointmentContext } from "./AppointmentContext";
 import Doctors from "./Components/Doctors";
 import LoginForm from "./Components/LoginForm";
 import Locations from "./Components/Locations";
-import WelcomeScreen from "./Components/WelcomeScreen";
 import FooterPage from "./Components/FooterPage";
 import SignUpForm from "./Components/SignUpForm";
 import NavbarPage from "./Components/NaveBarPage";
@@ -14,6 +12,8 @@ import Appointments from "./Components/Appointments";
 import ViewAppointments from "./Components/ViewAppointments";
 import Testimonials from "./Components/Testimonials";
 import FeedbackForm from "./Components/FeedbackForm";
+import HomeScreen from "./Components/HomeScreen";
+// import { config } from "./Constants";
 
 function App() {
   const [locations, setLocations] = useState([]);
@@ -64,7 +64,7 @@ function App() {
           <NavbarPage />
           <Switch>
             <Route exact path="/">
-              <WelcomeScreen />
+              <HomeScreen />
             </Route>
             <Route exact path="/doctors">
               <Doctors doctors={doctors} />
@@ -83,7 +83,7 @@ function App() {
               />
             </Route>
             <Route exact path="/login">
-              {!currentUser ? <LoginForm /> : <WelcomeScreen />}
+              {!currentUser ? <LoginForm /> : <HomeScreen />}
             </Route>
             <Route exact path="/signup">
               {!currentUser ? <SignUpForm /> : null}

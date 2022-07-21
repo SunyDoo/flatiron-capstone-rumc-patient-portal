@@ -16,12 +16,12 @@ class TestimonialsController < ApplicationController
 
   # POST /testimonials
   def create
-    @testimonial = Testimonial.new(testimonial_params)
+    testimonial = Testimonial.create(testimonial_params)
 
-    if @testimonial.save
-      render json: @testimonial, status: :created, location: @testimonial
+    if testimonial.valid?
+      render json: testimonial, status: :created
     else
-      render json: @testimonial.errors, status: :unprocessable_entity
+      render json: { errors: testimonial.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -34,10 +34,10 @@ class TestimonialsController < ApplicationController
   #   end
   # end
 
-  # # DELETE /testimonials/1
-  # def destroy
-  #   @testimonial.destroy
-  # end
+  # DELETE /testimonials/1
+  def destroy
+    @testimonial.destroy
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

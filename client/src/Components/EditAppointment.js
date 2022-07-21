@@ -14,7 +14,7 @@ function EditAppointment({
 }) {
   const [startDate, setStartDate] = useState(null);
   const { appointments, setAppointments } = useContext(AppointmentContext);
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState(null);
 
   const minDate = new Date();
 
@@ -35,7 +35,7 @@ function EditAppointment({
           updateAppointments(updatedAppointment)
         );
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then(() => setErrors("Please select Date and Time"));
       }
     });
   }
@@ -111,7 +111,7 @@ function EditAppointment({
           </MDBBtn>
         ) : null}
       </MDBBtnGroup>
-      {errors ? errors.map((err) => <p key={err}>{err}</p>) : null}
+      <div> {errors ? <p>{errors}</p> : null}</div>
     </>
   );
 }
