@@ -4,7 +4,6 @@ import { UserContext } from "./UserContext";
 import { AppointmentContext } from "./AppointmentContext";
 import Doctors from "./Components/Doctors";
 import LoginForm from "./Components/LoginForm";
-import Locations from "./Components/Locations";
 import FooterPage from "./Components/FooterPage";
 import SignUpForm from "./Components/SignUpForm";
 import NavbarPage from "./Components/NaveBarPage";
@@ -13,6 +12,8 @@ import ViewAppointments from "./Components/ViewAppointments";
 import Testimonials from "./Components/Testimonials";
 import FeedbackForm from "./Components/FeedbackForm";
 import HomeScreen from "./Components/HomeScreen";
+import Mapbox from "./Components/Mapbox";
+// import Locations from "./Components/Locations";
 // import { config } from "./Constants";
 
 function App() {
@@ -70,7 +71,8 @@ function App() {
               <Doctors doctors={doctors} />
             </Route>
             <Route exact path="/locations">
-              <Locations locations={locations} />
+              <Mapbox locations={locations} />
+              {/* <Locations locations={locations} /> */}
             </Route>
             <Route exact path="/testimonials">
               <Testimonials testimonials={testimonials} />
