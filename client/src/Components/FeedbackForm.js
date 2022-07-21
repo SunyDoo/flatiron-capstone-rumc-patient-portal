@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
-import { MDBCheckbox } from "mdb-react-ui-kit";
+import { MDBCheckbox, MDBBtn } from "mdb-react-ui-kit";
 
 function FeedbackForm({ testimonials, setTestimonials, locations }) {
   const [feedback, setFeedback] = useState("");
@@ -29,9 +29,9 @@ function FeedbackForm({ testimonials, setTestimonials, locations }) {
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
-      setFeedback("")
-      setRecommend(false)
-      setLocation(true)
+      setFeedback("");
+      setRecommend(false);
+      setLocation(true);
     });
   }
   function updateTestimonials(newFeedback) {
@@ -40,7 +40,13 @@ function FeedbackForm({ testimonials, setTestimonials, locations }) {
 
   return (
     <>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <form onSubmit={handleSubmit}>
           <select
             name="filter"
@@ -71,20 +77,22 @@ function FeedbackForm({ testimonials, setTestimonials, locations }) {
             name="recommend"
             value={recommend}
             id="flexCheckDefault"
-            label="Recommend?"
+            label="Recommend This Location?"
             onChange={() => setRecommend((recommend) => !recommend)}
           />
           <label>
-            Feedback:
-            <input
+            <textarea
               type="text"
+              rows="5"
+              cols="50"
               name="feedback"
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
             />
           </label>
+          <br></br>
+          <MDBBtn type="submit">Leave Feedback</MDBBtn>
           {errors ? errors.map((err) => <p key={err}>{err}</p>) : null}
-          <button type="submit">Leave Feedback</button>
         </form>
       </div>
     </>
