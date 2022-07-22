@@ -58,7 +58,7 @@ function Appointments({ doctors }) {
           <br></br>
           <div
             style={{
-              position: "absolute",
+              position: "relative",
               justifyContent: "center",
               alignItems: "center",
             }}

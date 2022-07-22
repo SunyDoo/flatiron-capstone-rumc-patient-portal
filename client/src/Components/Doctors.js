@@ -26,13 +26,14 @@ function Doctors({ doctors }) {
         setSelectedDepartment={setSelectedDepartment}
       />
       <br></br>
-      <MDBRow
-        className="row-cols-3 row-cols-md-3 g-4"
-        style={{
+      <div style={{
           position: "absolute",
           justifyContent: "center",
           alignItems: "center",
-        }}
+        }}>
+      <MDBRow
+        className="row-cols-3 row-cols-md-3 g-4"
+        
       >
         {docsToDisplay.map((doc) => (
           <MDBCard
@@ -63,6 +64,7 @@ function Doctors({ doctors }) {
           </MDBCard>
         ))}
       </MDBRow>
+      </div>
     </>
   );
 }
