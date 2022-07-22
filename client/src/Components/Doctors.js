@@ -25,13 +25,29 @@ function Doctors({ doctors }) {
         selectedDepartment={selectedDepartment}
         setSelectedDepartment={setSelectedDepartment}
       />
-
-      <MDBRow className="row-cols-3 row-cols-md-3 g-4">
+      <br></br>
+      <MDBRow
+        className="row-cols-3 row-cols-md-3 g-4"
+        style={{
+          position: "absolute",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         {docsToDisplay.map((doc) => (
-          <MDBCard style={{ maxWidth: "300px" }} key={doc.id} className="h-750">
+          <MDBCard
+            style={{ maxWidth: "300px", position: "relative" }}
+            key={doc.id}
+            className="h-750"
+          >
             <MDBRow className="g-0">
               <MDBCol>
-                <MDBCardImage src={doc.image} alt={doc.name} style={{ maxWidth: '15rem' }} className='img-thumbnail' />
+                <MDBCardImage
+                  src={doc.image}
+                  alt={doc.name}
+                  style={{ maxWidth: "15rem" }}
+                  className="img-thumbnail"
+                />
 
                 <MDBCardBody>
                   <MDBCardTitle>{doc.name}</MDBCardTitle>
