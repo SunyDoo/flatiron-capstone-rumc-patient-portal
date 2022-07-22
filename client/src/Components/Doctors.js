@@ -25,38 +25,28 @@ function Doctors({ doctors }) {
         selectedDepartment={selectedDepartment}
         setSelectedDepartment={setSelectedDepartment}
       />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <ul>
-          {docsToDisplay.map((doc) => (
-            <MDBCard style={{ maxWidth: "540px" }} key={doc.id}>
-              <MDBRow className="g-0">
-                <MDBCol md="4">
-                  <MDBCardImage src={doc.image} alt={doc.name} fluid />
-                </MDBCol>
-                <MDBCol md="8">
-                  <MDBCardBody>
-                    <MDBCardTitle>{doc.name}</MDBCardTitle>
-                    <MDBCardText>{doc.specialty}</MDBCardText>
-                    <MDBCardText>
-                      <small className="text-muted">
-                        {doc.location.address}
-                      </small>
-                      <br></br>
-                      <small className="text-muted">{doc.phone_number}</small>
-                    </MDBCardText>
-                  </MDBCardBody>
-                </MDBCol>
-              </MDBRow>
-            </MDBCard>
-          ))}
-        </ul>
-      </div>
+
+      <MDBRow className="row-cols-3 row-cols-md-3 g-4">
+        {docsToDisplay.map((doc) => (
+          <MDBCard style={{ maxWidth: "300px" }} key={doc.id} className="h-750">
+            <MDBRow className="g-0">
+              <MDBCol>
+                <MDBCardImage src={doc.image} alt={doc.name} style={{ maxWidth: '15rem' }} className='img-thumbnail' />
+
+                <MDBCardBody>
+                  <MDBCardTitle>{doc.name}</MDBCardTitle>
+                  <MDBCardText>{doc.specialty}</MDBCardText>
+                  <MDBCardText>
+                    <small className="text-muted">{doc.location.address}</small>
+                    <br></br>
+                    <small className="text-muted">{doc.phone_number}</small>
+                  </MDBCardText>
+                </MDBCardBody>
+              </MDBCol>
+            </MDBRow>
+          </MDBCard>
+        ))}
+      </MDBRow>
     </>
   );
 }

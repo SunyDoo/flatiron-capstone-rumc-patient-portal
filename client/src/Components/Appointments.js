@@ -45,6 +45,7 @@ function Appointments({ doctors }) {
     <>
       {!appointmentForm ? (
         <div className="doctors">
+          <div>
           <FilterInsurance
             selectedInsurance={selectedInsurance}
             setSelectedInsurance={setSelectedInsurance}
@@ -53,6 +54,8 @@ function Appointments({ doctors }) {
             selectedDepartment={selectedDepartment}
             setSelectedDepartment={setSelectedDepartment}
           />
+          </div>
+          <br></br>
           <div
             style={{
               display: "flex",
@@ -60,7 +63,7 @@ function Appointments({ doctors }) {
               alignItems: "center",
             }}
           >
-            <ul>
+            <MDBRow className="row-cols-3 row-cols-md-3 g-4">
               {filteredDocs.map((doc) => (
                 <MDBCard style={{ maxWidth: "540px" }} key={doc.id}>
                   <MDBRow className="g-0">
@@ -88,7 +91,7 @@ function Appointments({ doctors }) {
                   </MDBRow>
                 </MDBCard>
               ))}
-            </ul>
+            </MDBRow>
           </div>
         </div>
       ) : null}
