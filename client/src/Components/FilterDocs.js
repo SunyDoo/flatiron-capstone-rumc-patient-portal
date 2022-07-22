@@ -3,7 +3,7 @@ import React from "react";
 function FilterDocs({ selectedDepartment, setSelectedDepartment }) {
   return (
     <div>
-        <h3>Filter By Department</h3>
+        <h3>Search By Department</h3>
       <select
         name="filter"
         value={selectedDepartment}

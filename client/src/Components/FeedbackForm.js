@@ -39,8 +39,9 @@ function FeedbackForm({ testimonials, setTestimonials, locations }) {
   }
 
   return (
-    <>
+    <div className="float-container">
       <div
+        className="float-center"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -73,6 +74,7 @@ function FeedbackForm({ testimonials, setTestimonials, locations }) {
               The Center For Integrative Behavioral Medicine
             </option>
           </select>
+          <br></br>
           <MDBCheckbox
             name="recommend"
             value={recommend}
@@ -95,7 +97,7 @@ function FeedbackForm({ testimonials, setTestimonials, locations }) {
           {errors ? errors.map((err) => <p key={err}>{err}</p>) : null}
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

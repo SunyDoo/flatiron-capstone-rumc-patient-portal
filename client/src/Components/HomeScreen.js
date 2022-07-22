@@ -9,12 +9,13 @@ import {
 
 export default function HomeScreen() {
   return (
-    <MDBCarousel showIndicators showControls>
+    <MDBCarousel showIndicators showControls fade>
       <MDBCarouselInner>
         <MDBCarouselItem className="active">
           <MDBCarouselElement
             src="https://s7d2.scene7.com/is/image/TWCNews/rumc_deal_fails_cc40825169117875924778"
             alt="hospital main campus"
+            className="img-fluid shadow-4"
           />
           <MDBCarouselCaption>
             <p>Welcome to Richmond University Medical Center</p>
@@ -24,6 +25,7 @@ export default function HomeScreen() {
           <MDBCarouselElement
             src="https://www.cannondesign.com/assets/CAN1674_N13_letter.jpg"
             alt="emergency department"
+            className="img-fluid shadow-4"
           />
           <MDBCarouselCaption>
             <p>Brand new, state of the art, Emergency Department</p>
@@ -33,6 +35,7 @@ export default function HomeScreen() {
           <MDBCarouselElement
             src="https://freedesignfile.com/upload/2017/06/Group-of-happy-doctors-at-hospital-Stock-Photo-03.jpg"
             alt="team of doctors"
+            className="img-fluid shadow-4"
           />
           <MDBCarouselCaption>
             <p>Experienced team of highly qualified healthcare staff</p>

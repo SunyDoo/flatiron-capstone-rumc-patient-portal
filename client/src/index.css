@@ -14,7 +14,7 @@ code {
 }
 
 .map-container {
-  height: 400px;
+  height: 550px;
 }
 
 .sidebar {
@@ -36,8 +36,21 @@ code {
 }
 
 .float-child {
-  width: 50%;
+  width: fit-content;
+  height: fit-content;
   float: left;
   padding: 20px;
+  min-width: 936px;
+  min-height: 600px;
+  border: 2px solid rgb(0, 119, 255);
+}
+
+.float-center {
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  padding: 20px;
+  min-width: 936px;
+  min-height: 600px;
   border: 2px solid rgb(0, 119, 255);
 }

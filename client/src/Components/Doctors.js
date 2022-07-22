@@ -20,17 +20,13 @@ function Doctors({ doctors }) {
   });
 
   return (
-    <>
+    <div className="float-center">
       <FilterDocs
         selectedDepartment={selectedDepartment}
         setSelectedDepartment={setSelectedDepartment}
       />
       <br></br>
-      <div style={{
-          position: "absolute",
-          justifyContent: "center",
-          alignItems: "center",
-        }}>
+      <div className="float-center">
       <MDBRow
         className="row-cols-3 row-cols-md-3 g-4"
         
@@ -65,7 +61,7 @@ function Doctors({ doctors }) {
         ))}
       </MDBRow>
       </div>
-    </>
+    </div>
   );
 }
 

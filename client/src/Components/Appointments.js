@@ -42,9 +42,13 @@ function Appointments({ doctors }) {
   //   console.log(selectDoc);
 
   return (
-    <>
+    <div style={{
+      position: "relative",
+      justifyContent: "center",
+      alignItems: "center",
+    }}>
       {!appointmentForm ? (
-        <div className="doctors">
+        <div>
           <div>
             <FilterInsurance
               selectedInsurance={selectedInsurance}
@@ -56,12 +60,8 @@ function Appointments({ doctors }) {
             />
           </div>
           <br></br>
-          <div
-            style={{
-              position: "relative",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+          <div className="float-center"
+            
           >
             <MDBRow className="row-cols-3 row-cols-md-3 g-4">
               {filteredDocs.map((doc) => (
@@ -114,7 +114,7 @@ function Appointments({ doctors }) {
           <MDBBtn onClick={toggleForm}>Return to Doctors</MDBBtn>
         </div>
       ) : null}
-    </>
+    </div>
   );
 }
 

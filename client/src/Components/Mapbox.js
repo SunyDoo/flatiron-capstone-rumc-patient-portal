@@ -5,7 +5,7 @@ import markers from "../map-marker";
 mapboxgl.accessToken =
   "pk.eyJ1Ijoic25pbGF2YXJhdGgiLCJhIjoiY2w1djQzOXZsMDVieTNjb2RtMGhkY3YydyJ9.EEYlphkEKzGGA9IzH4xtEA";
 
-export default function App({ locations }) {
+export default function Mapbox({ locations }) {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [lng, setLng] = useState(-74.151535);
@@ -51,16 +51,14 @@ export default function App({ locations }) {
       </div>
       <div className="float-child">
         <ul>
-        {markers.markers.features.map((feature) => (
-    <li key={feature.properties.title}>{feature.properties.title}</li>
-  ))}
+          {markers.markers.features.map((feature) => (
+            <li key={feature.properties.title}>{feature.properties.title}</li>
+          ))}
         </ul>
       </div>
     </div>
   );
 }
-
-
 
 //   {locations.map((loc) => (
 //     <li key={loc.id}>{loc.name}</li>

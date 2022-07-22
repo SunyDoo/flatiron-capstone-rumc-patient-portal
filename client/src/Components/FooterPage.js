@@ -3,8 +3,7 @@ import { MDBFooter, MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
 
 export default function App() {
   return (
-    <div className="fixed-bottom">
-      <MDBFooter bgColor="primary" className="text-white text-lg-left">
+      <MDBFooter bgColor="primary" className="text-white text-lg-left fixed-bottom">
         <MDBContainer className="p-4">
           <MDBRow>
             <MDBCol lg="6" md="12" className="mb-4 mb-md-0">
@@ -31,7 +30,6 @@ export default function App() {
           </a>
         </div>
       </MDBFooter>
-    </div>
   );
 }
 

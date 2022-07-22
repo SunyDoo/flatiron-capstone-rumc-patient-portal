@@ -3,7 +3,7 @@ import React from "react";
 function FilterInsurance({ selectedInsurance, setSelectedInsurance }) {
   return (
     <div>
-      <h3>Filter By Network</h3>
+      <h3>Search By Network</h3>
       <select
         name="filter"
         value={selectedInsurance}

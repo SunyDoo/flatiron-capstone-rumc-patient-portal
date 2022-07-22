@@ -11,6 +11,7 @@ import {
   MDBNavbarItem,
   MDBNavbarLink,
   MDBCollapse,
+  MDBBtn
 } from "mdb-react-ui-kit";
 
 export default function NavbarPage() {
@@ -52,39 +53,41 @@ export default function NavbarPage() {
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav sticky="true" className="mr-auto mb-2 mb-lg-0">
             <MDBNavbarItem>
-              <MDBNavbarLink href="/doctors">Our Team</MDBNavbarLink>
+              <MDBNavbarLink style={{ color: "white" }} href="/doctors">
+                Our Team
+              </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="/locations">Locations</MDBNavbarLink>
+              <MDBNavbarLink style={{ color: "white" }} href="/locations">Locations</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="/testimonials">Testimonials</MDBNavbarLink>
+              <MDBNavbarLink style={{ color: "white" }} href="/testimonials">Testimonials</MDBNavbarLink>
             </MDBNavbarItem>
             {currentUser ? (
               <>
                 <MDBNavbarItem>
-                  <MDBNavbarLink href="/appointments">
+                  <MDBNavbarLink style={{ color: "white" }} href="/appointments">
                     View Appointment
                   </MDBNavbarLink>
                 </MDBNavbarItem>
                 <MDBNavbarItem>
-                  <MDBNavbarLink href="/makeappointment">
+                  <MDBNavbarLink style={{ color: "white" }} href="/makeappointment">
                     Make Appointment
                   </MDBNavbarLink>
                 </MDBNavbarItem>
                 <MDBNavbarItem>
-                  <MDBNavbarLink href="/leavefeedback">
+                  <MDBNavbarLink style={{ color: "white" }} href="/leavefeedback">
                     Leave Feedback
                   </MDBNavbarLink>
                 </MDBNavbarItem>
                 <MDBNavbarItem>
-                  <MDBNavbarLink href="/billofrights">
+                  <MDBNavbarLink style={{ color: "white" }} href="/billofrights">
                     View Bill of Rights
                   </MDBNavbarLink>
                 </MDBNavbarItem>
-                <MDBNavbarLink href="/" onClick={handleLogoutClick}>
+                <MDBBtn style={{ color: "white" }} outline color="white" className='me-2' type='button' href="/" onClick={handleLogoutClick}>
                   Logout
-                </MDBNavbarLink>
+                </MDBBtn>
               </>
             ) : null}
 
@@ -93,13 +96,13 @@ export default function NavbarPage() {
                 style={{ textAlign: "right" }}
                 className="justify-content-end"
               >
-                <MDBNavbarLink
-                  className="d-flex input-group w-auto"
+                <MDBBtn
+                  outline color="white" className='me-2' type='button'
                   href="/login"
                   exact="true"
                 >
                   Log In / Sign Up
-                </MDBNavbarLink>
+                </MDBBtn>
               </MDBNavbarItem>
             ) : null}
           </MDBNavbarNav>
