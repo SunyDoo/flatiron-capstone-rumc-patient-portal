@@ -54,3 +54,36 @@ code {
   min-height: 600px;
   border: 2px solid rgb(0, 119, 255);
 }
+
+.department-row {
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  padding: 20px;
+  min-width: 936px;
+  min-height: 600px;
+  border: 2px solid rgb(0, 119, 255);
+}
+
+/* Clear floats after the columns */
+.department-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.department-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #2f5edd;
+}
+
+.department-column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+

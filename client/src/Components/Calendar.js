@@ -11,7 +11,7 @@ function Calendar({ docId }) {
   const [startDate, setStartDate] = useState(null);
   const { currentUser } = useContext(UserContext);
   const { appointments, setAppointments } = useContext(AppointmentContext);
-  const [errors, setErrors] = useState("");
+  const [errors, setErrors] = useState([]);
   const minDate = new Date();
 
   function handleSubmit(e) {
@@ -34,7 +34,7 @@ function Calendar({ docId }) {
           setStartDate(null);
         });
       } else {
-        r.json().then(() => setErrors("Please select Date and Time"));
+        r.json().then((err) => setErrors(err.errors));
       }
     });
   }

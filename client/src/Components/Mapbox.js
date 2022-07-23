@@ -42,6 +42,7 @@ export default function Mapbox({ locations }) {
   });
 
   return (
+    
     <div className="float-container">
       <div className="float-child">
         <div className="sidebar">
