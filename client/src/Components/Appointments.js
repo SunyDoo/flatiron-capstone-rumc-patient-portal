@@ -39,8 +39,6 @@ function Appointments({ doctors }) {
     setSelectedDocId(e.target.id);
   }
 
-  //   console.log(selectDoc);
-
   return (
     <div
       style={{

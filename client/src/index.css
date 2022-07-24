@@ -62,7 +62,6 @@ code {
   padding: 20px;
   min-width: 936px;
   min-height: 600px;
-  border: 2px solid rgb(0, 119, 255);
 }
 
 /* Clear floats after the columns */
@@ -78,6 +77,11 @@ code {
   padding: 16px;
   text-align: center;
   background-color: #2f5edd;
+  transition: box-shadow 0.3s;
+}
+
+.department-card:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
 
 .department-column {
@@ -85,11 +89,6 @@ code {
   width: 25%;
   padding: 0 10px;
 }
-
-/* .footer {
-  position: flex;
-
-} */
 
 .location-holder {
   column-count: 2;

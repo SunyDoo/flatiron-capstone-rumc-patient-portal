@@ -44,7 +44,15 @@ function Doctors({ doctors }) {
           <MDBRow className="department-row">
             {departments.map((department) => (
               <div className="department-column">
-                <MDBCard style={{ width: "18rem" }} className="department-card">
+                <MDBCard
+                  style={{
+                    width: "18rem",
+                    padding: "16px",
+                    backgroundColor: "#2f5edd",
+                    textAlign: "center",
+                  }}
+                  className="w-100 hover-shadow"
+                >
                   <MDBListGroup flush>
                     <MDBListGroupItem
                       onClick={() => {

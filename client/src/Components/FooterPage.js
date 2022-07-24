@@ -55,11 +55,3 @@ export default function FooterPage() {
     </div>
   );
 }
-
-//  style={{
-//   position: "flex",
-//   left: "0",
-//   bottom: "0",
-//   height: "175px",
-//   width: "100%",
-// }}
