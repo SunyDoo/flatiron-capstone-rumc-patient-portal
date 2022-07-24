@@ -100,7 +100,7 @@ export default function NavbarPage() {
                     color: "white",
                     position: "absolute",
                     right: "10px",
-                    top: "5px",
+                    top: "15px",
                   }}
                   outline
                   color="white"
@@ -129,7 +129,7 @@ export default function NavbarPage() {
                   style={{
                     position: "absolute",
                     right: "10px",
-                    top: "5px",
+                    top: "15px",
                   }}
                 >
                   Log In / Sign Up
