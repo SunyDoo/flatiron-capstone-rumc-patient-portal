@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import { MDBInput, MDBBtn } from "mdb-react-ui-kit";
+import { NavLink } from "react-router-dom";
 // import { config } from "../Constants";
 
 function SignUpForm() {
@@ -98,7 +99,11 @@ function SignUpForm() {
             <option value="AETNA">AETNA</option>
           </select>
         </label>
+        <br></br>
         <MDBBtn type="submit">Sign Up</MDBBtn>
+        <br></br>
+        <NavLink to="/login" exact>Back to Log In</NavLink>
+
         {errors ? errors.map((err) => <li key={err}>{err}</li>) : null}
       </form>
     </div>
