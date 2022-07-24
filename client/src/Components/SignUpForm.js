@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
-import { MDBInput } from "mdb-react-ui-kit";
+import { MDBInput, MDBBtn } from "mdb-react-ui-kit";
 // import { config } from "../Constants";
 
 function SignUpForm() {
@@ -98,7 +98,7 @@ function SignUpForm() {
             <option value="AETNA">AETNA</option>
           </select>
         </label>
-        <button type="submit">Sign Up</button>
+        <MDBBtn type="submit">Sign Up</MDBBtn>
         {errors ? errors.map((err) => <li key={err}>{err}</li>) : null}
       </form>
     </div>
