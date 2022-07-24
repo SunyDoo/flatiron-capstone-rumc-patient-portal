@@ -86,12 +86,10 @@ code {
   padding: 0 10px;
 }
 
-.footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
+/* .footer {
+  position: flex;
+
+} */
 
 .location-holder {
   column-count: 2;

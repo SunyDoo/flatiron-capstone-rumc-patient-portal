@@ -13,8 +13,7 @@ import Testimonials from "./Components/Testimonials";
 import FeedbackForm from "./Components/FeedbackForm";
 import HomeScreen from "./Components/HomeScreen";
 import Mapbox from "./Components/Mapbox";
-
-// import Locations from "./Components/Locations";
+import ContactUs from "./Footer Links/ContactUs";
 // import { config } from "./Constants";
 
 function App() {
@@ -71,6 +70,9 @@ function App() {
               </Route>
               <Route exact path="/testimonials">
                 <Testimonials testimonials={testimonials} />
+              </Route>
+              <Route exact path="/contactus">
+                <ContactUs locations={locations} />
               </Route>
               <Route exact path="/leavefeedback">
                 <FeedbackForm

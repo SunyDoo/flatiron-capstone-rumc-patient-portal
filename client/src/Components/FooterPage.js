@@ -4,7 +4,7 @@ import { MDBFooter, MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
 export default function FooterPage() {
   return (
     <div className="footer">
-      <MDBFooter bgColor="primary" className="text-white text-lg-left ">
+      <MDBFooter bgColor="primary" className="text-white text-lg-left fixed-bottom ">
         <MDBContainer className="p-4">
           <MDBRow>
             <MDBCol lg="6" md="12" className="mb-4 mb-md-0">
@@ -19,6 +19,27 @@ export default function FooterPage() {
                 833.295.2458
               </p>
             </MDBCol>
+            <MDBCol lg='3' md='6' className='mb-4 mb-md-0'>
+            <h5 className='text-uppercase'>Quick Links</h5>
+
+            <ul className='list-unstyled mb-0'>
+              <li>
+                <a href="/aboutus" className='text-white'>
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="/contactus" className='text-white'>
+                 Contact  Us
+                </a>
+              </li>
+              <li>
+                <a href="/billofrights" className='text-white'>
+                  Patient Bill of Rights
+                </a>
+              </li>
+              </ul>
+          </MDBCol>
           </MDBRow>
         </MDBContainer>
         <div
