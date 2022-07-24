@@ -14,6 +14,7 @@ import FeedbackForm from "./Components/FeedbackForm";
 import HomeScreen from "./Components/HomeScreen";
 import Mapbox from "./Components/Mapbox";
 import ContactUs from "./Footer Links/ContactUs";
+import AboutUs from "./Footer Links/AboutUs";
 // import { config } from "./Constants";
 
 function App() {
@@ -73,6 +74,9 @@ function App() {
               </Route>
               <Route exact path="/contactus">
                 <ContactUs locations={locations} />
+              </Route>
+              <Route exact path="/aboutus">
+                <AboutUs />
               </Route>
               <Route exact path="/leavefeedback">
                 <FeedbackForm
