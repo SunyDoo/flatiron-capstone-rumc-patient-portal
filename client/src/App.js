@@ -15,6 +15,7 @@ import HomeScreen from "./Components/HomeScreen";
 import Mapbox from "./Components/Mapbox";
 import ContactUs from "./Footer Links/ContactUs";
 import AboutUs from "./Footer Links/AboutUs";
+import BillOfRights from "./Footer Links/BillOfRights";
 // import { config } from "./Constants";
 
 function App() {
@@ -77,6 +78,9 @@ function App() {
               </Route>
               <Route exact path="/aboutus">
                 <AboutUs />
+              </Route>
+              <Route exact path="/billofrights">
+                <BillOfRights />
               </Route>
               <Route exact path="/leavefeedback">
                 <FeedbackForm

@@ -94,3 +94,7 @@ code {
 .location-holder {
   column-count: 2;
 }
+
+.img-fluid shadow-4 {
+  object-fit: contain;
+}
