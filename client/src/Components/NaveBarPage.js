@@ -67,7 +67,7 @@ export default function NavbarPage() {
                 Testimonials
               </MDBNavbarLink>
             </MDBNavbarItem>
-       
+
             {currentUser ? (
               <>
                 <MDBNavbarItem>
@@ -96,7 +96,12 @@ export default function NavbarPage() {
                 </MDBNavbarItem>
 
                 <MDBBtn
-                  style={{ color: "white" }}
+                  style={{
+                    color: "white",
+                    position: "absolute",
+                    right: "10px",
+                    top: "5px",
+                  }}
                   outline
                   color="white"
                   className="me-2"
@@ -121,6 +126,11 @@ export default function NavbarPage() {
                   type="button"
                   href="/login"
                   exact="true"
+                  style={{
+                    position: "absolute",
+                    right: "10px",
+                    top: "5px",
+                  }}
                 >
                   Log In / Sign Up
                 </MDBBtn>

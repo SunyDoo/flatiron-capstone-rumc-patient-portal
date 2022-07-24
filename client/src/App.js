@@ -68,7 +68,6 @@ function App() {
               </Route>
               <Route exact path="/locations">
                 <Mapbox locations={locations} />
-                {/* <Locations locations={locations} /> */}
               </Route>
               <Route exact path="/testimonials">
                 <Testimonials testimonials={testimonials} />
