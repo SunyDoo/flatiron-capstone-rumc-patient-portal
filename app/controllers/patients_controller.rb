@@ -1,7 +1,6 @@
 class PatientsController < ApplicationController
   wrap_parameters format: []
-  skip_before_action :authorize
-  # , only: :create
+  skip_before_action :authorize, only: :create
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
   # GET /patients
