@@ -35,7 +35,7 @@ export default function HomeScreen() {
         </MDBCarouselItem>
         <MDBCarouselItem>
           <MDBCarouselElement
-            src="https://freedesignfile.com/upload/2017/06/Group-of-happy-doctors-at-hospital-Stock-Photo-03.jpg"
+            src="https://www.riversidemedgroup.com/wp-content/uploads/2022/04/New-Providers-Q2-file-RIVV1-scaled.jpg"
             alt="team of doctors"
             className="img-fluid shadow-4"
             style={{ width: "500px", height: "700px" }}
