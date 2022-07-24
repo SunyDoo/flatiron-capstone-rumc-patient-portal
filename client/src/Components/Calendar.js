@@ -40,7 +40,7 @@ function Calendar({ docId }) {
   }
 
   return (
-    <>
+    <div>
       <DatePicker
         selected={startDate}
         minDate={minDate.setDate(minDate.getDate() + 1)}
@@ -71,7 +71,7 @@ function Calendar({ docId }) {
       />
       {errors ? <p>{errors}</p> : null}
       <MDBBtn onClick={handleSubmit}>Make Appointment</MDBBtn>
-    </>
+    </div>
   );
 }
 

@@ -37,10 +37,10 @@ function Doctors({ doctors }) {
   });
 
   return (
-    <div >
+    <div style={{ backgroundColor: "#ACACAC" }} >
       {showDepartments ? (
         <>
-        <h3>Departments</h3>
+        <h3 style={{ color: "black" }}>Departments</h3>
         <MDBRow className="department-row" >
           {departments.map((department) => (
           <div className="department-column">

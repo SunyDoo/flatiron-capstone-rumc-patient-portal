@@ -7,10 +7,8 @@ import {
 } from "mdb-react-ui-kit";
 
 function Testimonials({ testimonials }) {
-
-    
   return (
-    <>
+    <div>
       {testimonials.map((testimonial) => (
         <MDBCard key={testimonial.id}>
           <MDBCardHeader>{testimonial.location.name}</MDBCardHeader>
@@ -24,7 +22,7 @@ function Testimonials({ testimonials }) {
           </MDBCardBody>
         </MDBCard>
       ))}
-    </>
+    </div>
   );
 }
 

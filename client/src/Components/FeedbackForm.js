@@ -39,13 +39,14 @@ function FeedbackForm({ testimonials, setTestimonials, locations }) {
   }
 
   return (
-    <div className="float-container">
+    <div className="float-container" style={{ backgroundColor: "#ACACAC" }}>
       <div
         className="float-center"
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          backgroundColor: "white" 
         }}
       >
         <form onSubmit={handleSubmit}>

@@ -9,7 +9,11 @@ import {
 function Locations({ location }) {
   const [locationInfo, setLocationInfo] = useState(false);
   return (
-    <MDBCard key={location.id}>
+    <MDBCard
+      key={location.id}
+      className="w-100 hover-shadow"
+      style={{ maxWidth: "22rem" }}
+    >
       <MDBCardHeader
         onClick={() => setLocationInfo((locationInfo) => !locationInfo)}
       >

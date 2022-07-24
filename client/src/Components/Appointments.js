@@ -42,11 +42,13 @@ function Appointments({ doctors }) {
   //   console.log(selectDoc);
 
   return (
-    <div style={{
-      position: "relative",
-      justifyContent: "center",
-      alignItems: "center",
-    }}>
+    <div
+      style={{
+        position: "relative",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       {!appointmentForm ? (
         <div>
           <div>
@@ -60,9 +62,7 @@ function Appointments({ doctors }) {
             />
           </div>
           <br></br>
-          <div className="float-center"
-            
-          >
+          <div className="float-center">
             <MDBRow className="row-cols-3 row-cols-md-3 g-4">
               {filteredDocs.map((doc) => (
                 <MDBCard
@@ -99,20 +99,33 @@ function Appointments({ doctors }) {
         </div>
       ) : null}
       {appointmentForm ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "50vh",
-          }}
-        >
-          <div>
-            <Calendar docId={selectedDocId} />
-          </div>
+        <>
           <br></br>
-          <MDBBtn onClick={toggleForm}>Return to Doctors</MDBBtn>
-        </div>
+          <MDBBtn
+            onClick={toggleForm}
+            style={{
+              display: "fixed",
+              justifyContent: "center",
+              padding: "10px",
+            }}
+          >
+            Return to Doctors
+          </MDBBtn>
+
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "50vh",
+            }}
+          >
+            <div>
+              <Calendar docId={selectedDocId} />
+            </div>
+            <br></br>
+          </div>
+        </>
       ) : null}
     </div>
   );
