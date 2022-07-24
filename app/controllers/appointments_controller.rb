@@ -20,7 +20,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       render json: @appointment, status: :created, location: @appointment
     else
-      render json: @appointment.errors, status: :unprocessable_entity
+      render json: { errors: @appointment.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

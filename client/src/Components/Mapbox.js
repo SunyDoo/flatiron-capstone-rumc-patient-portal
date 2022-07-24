@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import markers from "../map-marker";
-
+import Locations from "./Locations";
 mapboxgl.accessToken =
   "pk.eyJ1Ijoic25pbGF2YXJhdGgiLCJhIjoiY2w1djQzOXZsMDVieTNjb2RtMGhkY3YydyJ9.EEYlphkEKzGGA9IzH4xtEA";
 
@@ -20,15 +20,14 @@ export default function Mapbox({ locations }) {
       center: [lng, lat],
       zoom: zoom,
     });
-  });
 
-  useEffect(() => {
     if (!map.current) return; // wait for map to initialize
     map.current.on("move", () => {
       setLng(map.current.getCenter().lng.toFixed(5));
       setLat(map.current.getCenter().lat.toFixed(5));
       setZoom(map.current.getZoom().toFixed(2));
     });
+
     markers.markers.features.map((feature) =>
       new mapboxgl.Marker()
         .setLngLat(feature.geometry.coordinates)
@@ -42,7 +41,6 @@ export default function Mapbox({ locations }) {
   });
 
   return (
-    
     <div className="float-container">
       <div className="float-child">
         <div className="sidebar">
@@ -51,16 +49,12 @@ export default function Mapbox({ locations }) {
         <div ref={mapContainer} className="map-container" />
       </div>
       <div className="float-child">
-        <ul>
-          {markers.markers.features.map((feature) => (
-            <li key={feature.properties.title}>{feature.properties.title}</li>
+        <div className="location-holder">
+          {locations.map((location) => (
+            <Locations location={location} />
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
 }
-
-//   {locations.map((loc) => (
-//     <li key={loc.id}>{loc.name}</li>
-//   ))}

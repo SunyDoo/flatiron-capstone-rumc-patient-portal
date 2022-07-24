@@ -13,6 +13,7 @@ import Testimonials from "./Components/Testimonials";
 import FeedbackForm from "./Components/FeedbackForm";
 import HomeScreen from "./Components/HomeScreen";
 import Mapbox from "./Components/Mapbox";
+
 // import Locations from "./Components/Locations";
 // import { config } from "./Constants";
 
@@ -22,27 +23,6 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [appointments, setAppointments] = useState(null);
   const [testimonials, setTestimonials] = useState([]);
-
-  // useEffect(() => {
-  //   fetch(`/locations`)
-  //     .then((r) => r.json())
-  //     .then((data) => setLocations(data));
-  // }, []);
-
-  // useEffect(() => {
-  //   fetch(`/doctors`)
-  //     .then((r) => r.json())
-  //     .then((data) => setDoctors(data));
-  // }, []);
-
-  // useEffect(() => {
-  //   fetch(`/testimonials`)
-  //     .then((r) => r.json())
-  //     .then((data) => {
-  //       const positiveData = data.filter((test) => test.recommend);
-  //       setTestimonials(positiveData);
-  //     });
-  // }, []);
 
   useEffect(() => {
     fetch(`/locations`)
@@ -75,43 +55,45 @@ function App() {
   return (
     <UserContext.Provider value={{ currentUser, setCurrentUser }}>
       <AppointmentContext.Provider value={{ appointments, setAppointments }}>
-        <div className="App">
-          <NavbarPage />
-          <Switch>
-            <Route exact path="/">
-              <HomeScreen />
-            </Route>
-            <Route exact path="/doctors">
-              <Doctors doctors={doctors} />
-            </Route>
-            <Route exact path="/locations">
-              <Mapbox locations={locations} />
-              {/* <Locations locations={locations} /> */}
-            </Route>
-            <Route exact path="/testimonials">
-              <Testimonials testimonials={testimonials} />
-            </Route>
-            <Route exact path="/leavefeedback">
-              <FeedbackForm
-                locations={locations}
-                testimonials={testimonials}
-                setTestimonials={setTestimonials}
-              />
-            </Route>
-            <Route exact path="/login">
-              {!currentUser ? <LoginForm /> : <HomeScreen />}
-            </Route>
-            <Route exact path="/signup">
-              {!currentUser ? <SignUpForm /> : null}
-            </Route>
-            <Route exact path="/makeappointment">
-              <Appointments doctors={doctors} />
-            </Route>
-            <Route exact path="/appointments">
-              <ViewAppointments locations={locations} />
-            </Route>
-          </Switch>
-          <FooterPage />
+        <div>
+          <div className="App">
+            <NavbarPage />
+            <Switch>
+              <Route exact path="/">
+                <HomeScreen />
+              </Route>
+              <Route exact path="/doctors">
+                <Doctors doctors={doctors} />
+              </Route>
+              <Route exact path="/locations">
+                <Mapbox locations={locations} />
+                {/* <Locations locations={locations} /> */}
+              </Route>
+              <Route exact path="/testimonials">
+                <Testimonials testimonials={testimonials} />
+              </Route>
+              <Route exact path="/leavefeedback">
+                <FeedbackForm
+                  locations={locations}
+                  testimonials={testimonials}
+                  setTestimonials={setTestimonials}
+                />
+              </Route>
+              <Route exact path="/login">
+                {!currentUser ? <LoginForm /> : <HomeScreen />}
+              </Route>
+              <Route exact path="/signup">
+                {!currentUser ? <SignUpForm /> : null}
+              </Route>
+              <Route exact path="/makeappointment">
+                <Appointments doctors={doctors} />
+              </Route>
+              <Route exact path="/appointments">
+                <ViewAppointments locations={locations} />
+              </Route>
+            </Switch>
+            <FooterPage />
+          </div>
         </div>
       </AppointmentContext.Provider>
     </UserContext.Provider>

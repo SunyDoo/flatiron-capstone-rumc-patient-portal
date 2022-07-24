@@ -1,17 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import {
+  MDBCard,
+  MDBCardHeader,
+  MDBCardBody,
+  MDBTypography,
+} from "mdb-react-ui-kit";
 
-function Locations({ locations }) {
+function Locations({ location }) {
+  const [locationInfo, setLocationInfo] = useState(false);
   return (
-    <>
-      <div>
-        <ul>
-          {locations.map((loc) => (
-            <li key={loc.id}>{loc.name}</li>
-          ))}
-        </ul>
-      </div>
-      
-    </>
+    <MDBCard key={location.id}>
+      <MDBCardHeader
+        onClick={() => setLocationInfo((locationInfo) => !locationInfo)}
+      >
+        {location.name}
+      </MDBCardHeader>
+      {locationInfo ? (
+        <MDBCardBody>
+          <MDBTypography blockquote className="mb-0">
+            <small>
+              {location.address}
+              <br></br>Staten Island, NY {location.zip_code}
+              <br></br>
+              <img
+                src={location.image_url}
+                className={location.name}
+                alt={location.name}
+                style={{ maxWidth: "20rem" }}
+              />
+            </small>
+          </MDBTypography>
+        </MDBCardBody>
+      ) : null}
+    </MDBCard>
   );
 }
 
