@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import { MDBCheckbox, MDBBtn } from "mdb-react-ui-kit";
 
-function FeedbackForm({ testimonials, setTestimonials, locations }) {
+function FeedbackForm({ testimonials, setTestimonials }) {
   const [feedback, setFeedback] = useState("");
   const [errors, setErrors] = useState([]);
   const [recommend, setRecommend] = useState(false);
@@ -50,7 +50,6 @@ function FeedbackForm({ testimonials, setTestimonials, locations }) {
             backgroundColor: "white",
           }}
         >
-          
           <form onSubmit={handleSubmit}>
             <select
               name="filter"
