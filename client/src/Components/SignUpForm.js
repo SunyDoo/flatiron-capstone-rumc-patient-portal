@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import { MDBInput, MDBBtn } from "mdb-react-ui-kit";
 import { NavLink } from "react-router-dom";
-import { config } from "../Constants";
+// import { config } from "../Constants";
 
 function SignUpForm() {
   const [first_name, setFirstName] = useState("");
@@ -23,8 +23,8 @@ function SignUpForm() {
       password,
       insurance,
     };
-    // console.log(user);
-    fetch(`${config.url}/signup`, {
+
+    fetch(`/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
