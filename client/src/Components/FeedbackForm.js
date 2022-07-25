@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import { MDBCheckbox, MDBBtn } from "mdb-react-ui-kit";
+import { config } from "../Constants";
 
 function FeedbackForm({ testimonials, setTestimonials }) {
   const [feedback, setFeedback] = useState("");
@@ -17,7 +18,7 @@ function FeedbackForm({ testimonials, setTestimonials }) {
       recommend: recommend,
       feedback: feedback,
     };
-    fetch("/testimonials", {
+    fetch(`${config.url}/testimonials`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -5,6 +5,7 @@ import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 import "react-datepicker/dist/react-datepicker.css";
 import { MDBBtn, MDBBtnGroup } from "mdb-react-ui-kit";
+import { config } from "../Constants";
 
 function EditAppointment({
   appointment,
@@ -21,7 +22,7 @@ function EditAppointment({
   function handleFormSubmit(e) {
     e.preventDefault();
     setEditAppointment(false);
-    fetch(`/appointments/${appointment.id}`, {
+    fetch(`${config.url}/appointments/${appointment.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +53,7 @@ function EditAppointment({
   }
 
   function handleDeleteClick() {
-    fetch(`/appointments/${appointment.id}`, {
+    fetch(`${config.url}/appointments/${appointment.id}`, {
       method: "DELETE",
     }).then(() => handleDelete(appointment));
   }

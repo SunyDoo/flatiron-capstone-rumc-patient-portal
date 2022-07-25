@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import { NavLink } from "react-router-dom";
 import { MDBInput, MDBBtn } from "mdb-react-ui-kit";
-// import { config } from "../Constants";
+import { config } from "../Constants";
 
 function LoginForm() {
   const [username, setUsername] = useState("");
@@ -17,7 +17,7 @@ function LoginForm() {
       password,
     };
     console.log(currentUser);
-    fetch(`/login`, {
+    fetch(`${config.url}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

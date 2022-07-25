@@ -16,7 +16,7 @@ import Mapbox from "./Components/Mapbox";
 import ContactUs from "./Footer Links/ContactUs";
 import AboutUs from "./Footer Links/AboutUs";
 import BillOfRights from "./Footer Links/BillOfRights";
-// import { config } from "./Constants";
+import { config } from "./Constants";
 
 function App() {
   const [locations, setLocations] = useState([]);
@@ -26,22 +26,22 @@ function App() {
   const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
-    fetch(`/locations`)
+    fetch(`${config.url}/locations`)
       .then((r) => r.json())
       .then((data) => setLocations(data));
 
-    fetch(`/doctors`)
+    fetch(`${config.url}/doctors`)
       .then((r) => r.json())
       .then((data) => setDoctors(data));
 
-    fetch(`/testimonials`)
+    fetch(`${config.url}/testimonials`)
       .then((r) => r.json())
       .then((data) => {
         const positiveData = data.filter((test) => test.recommend);
         setTestimonials(positiveData);
       });
     // auto-login
-    fetch(`/auth`).then((res) => {
+    fetch(`${config.url}/auth`).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
           setCurrentUser(user);

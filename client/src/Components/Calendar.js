@@ -6,6 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { MDBBtn } from "mdb-react-ui-kit";
 import { UserContext } from "../UserContext";
 import { AppointmentContext } from "../AppointmentContext";
+import { config } from "../Constants";
 
 function Calendar({ docId }) {
   const [startDate, setStartDate] = useState(null);
@@ -21,7 +22,7 @@ function Calendar({ docId }) {
       doctor_id: docId,
       date_time: startDate,
     };
-    fetch(`/appointments`, {
+    fetch(`${config.url}/appointments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,6 +33,7 @@ function Calendar({ docId }) {
         r.json().then((newAppointment) => {
           setAppointments(...appointments, newAppointment);
           setStartDate(null);
+          setErrors([]);
         });
       } else {
         r.json().then((err) => setErrors(err.errors));

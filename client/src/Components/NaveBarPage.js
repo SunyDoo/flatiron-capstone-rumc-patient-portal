@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
-// import { config } from "../Constants";
+import { config } from "../Constants";
 import {
   MDBContainer,
   MDBNavbar,
@@ -19,7 +19,7 @@ export default function NavbarPage() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
   function handleLogoutClick() {
-    fetch(`/logout`, { method: "DELETE" }).then((res) => {
+    fetch(`${config.url}/logout`, { method: "DELETE" }).then((res) => {
       if (res.ok) {
         setCurrentUser(null);
       }
