@@ -92,7 +92,7 @@ function App() {
                 {!currentUser ? <LoginForm /> : <HomeScreen />}
               </Route>
               <Route exact path="/signup">
-                {!currentUser ? <SignUpForm /> : null}
+                {!currentUser ? <SignUpForm /> : <HomeScreen />}
               </Route>
               <Route exact path="/-makeappointment">
                 <Appointments doctors={doctors} />
