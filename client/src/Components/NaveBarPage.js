@@ -53,17 +53,17 @@ export default function NavbarPage() {
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav sticky="true" className="mr-auto mb-2 mb-lg-0">
             <MDBNavbarItem>
-              <MDBNavbarLink style={{ color: "white" }} href="/doctors">
+              <MDBNavbarLink style={{ color: "white" }} href="/-doctors">
                 Our Team
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink style={{ color: "white" }} href="/locations">
+              <MDBNavbarLink style={{ color: "white" }} href="/-locations">
                 Locations
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink style={{ color: "white" }} href="/testimonials">
+              <MDBNavbarLink style={{ color: "white" }} href="/-testimonials">
                 Testimonials
               </MDBNavbarLink>
             </MDBNavbarItem>
@@ -73,7 +73,7 @@ export default function NavbarPage() {
                 <MDBNavbarItem>
                   <MDBNavbarLink
                     style={{ color: "white" }}
-                    href="/appointments"
+                    href="/-appointments"
                   >
                     View Appointment
                   </MDBNavbarLink>
@@ -81,7 +81,7 @@ export default function NavbarPage() {
                 <MDBNavbarItem>
                   <MDBNavbarLink
                     style={{ color: "white" }}
-                    href="/makeappointment"
+                    href="/-makeappointment"
                   >
                     Make Appointment
                   </MDBNavbarLink>
@@ -89,7 +89,7 @@ export default function NavbarPage() {
                 <MDBNavbarItem>
                   <MDBNavbarLink
                     style={{ color: "white" }}
-                    href="/leavefeedback"
+                    href="/-leavefeedback"
                   >
                     Leave Feedback
                   </MDBNavbarLink>

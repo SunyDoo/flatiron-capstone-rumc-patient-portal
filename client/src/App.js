@@ -63,13 +63,13 @@ function App() {
               <Route exact path="/">
                 <HomeScreen />
               </Route>
-              <Route exact path="/doctors">
+              <Route exact path="/-doctors">
                 <Doctors doctors={doctors} />
               </Route>
-              <Route exact path="/locations">
+              <Route exact path="/-locations">
                 <Mapbox locations={locations} />
               </Route>
-              <Route exact path="/testimonials">
+              <Route exact path="/-testimonials">
                 <Testimonials testimonials={testimonials} />
               </Route>
               <Route exact path="/contactus">
@@ -81,7 +81,7 @@ function App() {
               <Route exact path="/billofrights">
                 <BillOfRights />
               </Route>
-              <Route exact path="/leavefeedback">
+              <Route exact path="/-leavefeedback">
                 <FeedbackForm
                   locations={locations}
                   testimonials={testimonials}
@@ -94,10 +94,10 @@ function App() {
               <Route exact path="/signup">
                 {!currentUser ? <SignUpForm /> : null}
               </Route>
-              <Route exact path="/makeappointment">
+              <Route exact path="/-makeappointment">
                 <Appointments doctors={doctors} />
               </Route>
-              <Route exact path="/appointments">
+              <Route exact path="/-appointments">
                 <ViewAppointments locations={locations} />
               </Route>
             </Switch>

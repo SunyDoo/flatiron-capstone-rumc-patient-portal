@@ -9,11 +9,10 @@ Rails.application.routes.draw do
   get "/auth", to: "patients#show"
   delete "/logout", to: "sessions#destroy"
 
-  get '/hello', to: 'application#hello_world'
-  # Defines the root path route ("/")
-  # root "articles#index"
 
-  get '*path',
-      to: 'fallback#index',
+
+  get '*path', 
+      to: 'fallback#index', 
       constraints: ->(req) { !req.xhr? && req.format.html? }
 end
+
