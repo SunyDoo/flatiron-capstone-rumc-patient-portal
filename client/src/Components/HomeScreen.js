@@ -24,7 +24,7 @@ export default function HomeScreen() {
         </MDBCarouselItem>
         <MDBCarouselItem>
           <MDBCarouselElement
-            src="https://www.cannondesign.com/assets/CAN1674_N13_letter.jpg"
+            src="https://i.pinimg.com/originals/86/b8/35/86b835d38f32afa3734477e23b70c6c0.jpg"
             alt="emergency department"
             className="img-fluid shadow-4"
             style={{ width: "200px", height: "700px" }}
@@ -35,7 +35,7 @@ export default function HomeScreen() {
         </MDBCarouselItem>
         <MDBCarouselItem>
           <MDBCarouselElement
-            src="https://www.riversidemedgroup.com/wp-content/uploads/2022/04/New-Providers-Q2-file-RIVV1-scaled.jpg"
+            src="https://i.pinimg.com/originals/57/0b/d7/570bd7fb2413980872bc0187768d0326.jpg"
             alt="team of doctors"
             className="img-fluid shadow-4"
             style={{ width: "500px", height: "700px" }}
